@@ -1,12 +1,12 @@
-import "./App.css";
-import Nav from "./components/Nav";
-import Home from "./components/Home";
-import Footer from "./components/Footer";
-import { Route } from "react-router-dom";
-import City from "./components/City";
-import Profile from "./components/Profile";
-import Store from "./components/Store";
-import Mountain from "./components/Mountain";
+import './App.css';
+import Nav from './components/Nav';
+import Home from './components/Home';
+import Footer from './components/Footer';
+import { Route } from 'react-router-dom';
+import City from './components/City';
+import Profile from './components/Profile';
+import Store from './components/Store';
+import Mountain from './components/Mountain';
 
 function App() {
   return (
