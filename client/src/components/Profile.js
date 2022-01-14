@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Profile = () => {
+  const [profile, setProfile] = useState({
+    name: "",
+    gender: "",
+    level: "",
+    typeOfRide: "",
+    isBackcountry: false,
+    personalStory: "",
+    contactInfo: "",
+    isInstructor: false,
+    isOver21: false,
+  });
+
   return (
     <div className="profile">
       Create your profile
@@ -11,21 +23,23 @@ const Profile = () => {
             <input type="text"></input>
             <label for="gender">Enter gender: </label>
             <input type="text"></input>
-            <label for="ride">Enter ride: </label>
+            <label for="level">Enter level: </label>
             <input type="text"></input>
-            <label for="backCountry">Enter Backcountry: </label>
+            <label for="typeOfRide">Enter ride: </label>
+            <input type="text"></input>
+            <label for="isBackcountry">Enter Backcountry: </label>
             <input type="text"></input>
             <label for="personalStory">Have a personal story to tell?</label>
             <input type="text"></input>
-            <label for="contact">Method of contact</label>
+            <label for="contactInfo">Method of contact</label>
             <input type="text"></input>
-            <label for="instructor">Instructor?</label>
-            <select name="instructor" id="instructor">
+            <label for="isInstructor">Instructor?</label>
+            <select name="isInstructor" id="isInstructor">
               <option value="No">No</option>
               <option value="Yes">Yes</option>
             </select>
-            <label for="instructor">Instructor?</label>
-            <select name="age" id="age">
+            <label for="isOver21">Over 21?</label>
+            <select name="isOver21" id="isOver21">
               <option value="No">No</option>
               <option value="Yes">Yes</option>
             </select>
