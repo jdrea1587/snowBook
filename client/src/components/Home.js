@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home = () => {
   return (
-    <div className="home">
+    <div className="grid-container">
       <ul>name 1</ul>
       <ul>name 2</ul>
       <ul>name 3</ul>

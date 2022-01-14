@@ -2,7 +2,7 @@ import React from 'react';
 
 const Store = () => {
   return (
-    <div className="store">
+    <div className="grid-container">
       <ul>Store name 1</ul>
       <ul>Store name 2</ul>
       <ul>Store name 3</ul>
