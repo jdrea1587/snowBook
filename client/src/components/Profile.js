@@ -15,7 +15,6 @@ const Profile = () => {
     isOver21: false,
   });
 
-  const testProfile = [];
 
   //NEED URL FOR AXIOS CALL
   const addProfile = async (e) => {
@@ -139,7 +138,6 @@ const Profile = () => {
 
       {/* <div className="user-profile">
         <h1>NAME HERE</h1>
-
         <h2>Gender: GENDER HERE</h2>
         <h2>Type of ride: TYPE OF RIDE HERE</h2>
         <h2> Interest: INTEREST HERE</h2>
