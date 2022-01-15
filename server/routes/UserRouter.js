@@ -1,6 +1,10 @@
-const Router = require('express').Router();
+const { Router } = require('express');
 const controller = require('../controllers/UserController');
+const router = Router();
 
-Router.get('/', controller.GetProfiles);
+router.get('/', controller.getAllProfiles);
+router.post('/createprofile', controller.createProfile);
+router.put('/updateProfile/:id', controller.updateProfile);
+router.delete('/getalltrails/:id', controller.deleteProfile);
 
-module.exports = Router;
+module.exports = router;

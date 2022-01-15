@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useState } from 'react';
+import axios from 'axios';
 
 const Profile = () => {
   const [newProfile, setNewProfile] = useState({
@@ -12,13 +12,13 @@ const Profile = () => {
     personalStory: "",
     contactInfo: "",
     isInstructor: false,
-    isOver21: false,
+    isOver21: false
   });
 
 
   //NEED URL FOR AXIOS CALL
   const addProfile = async (e) => {
-    return await axios.post("", newProfile);
+    return await axios.post('', newProfile);
   };
 
   //to get values from fields
