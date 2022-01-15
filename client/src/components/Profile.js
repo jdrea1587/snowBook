@@ -15,6 +15,8 @@ const Profile = () => {
     isOver21: false
   });
 
+  const testProfile = [];
+
   //NEED URL FOR AXIOS CALL
   const addProfile = async (e) => {
     return await axios.post('', newProfile);
@@ -37,11 +39,11 @@ const Profile = () => {
   };
 
   return (
-    <div className="profile">
-      Create your profile
-      <div>
+    <div>
+      <div className="grid-container-profile">
+        Create your profile
         <form onSubmit={handleSubmit}>
-          <div className="profile-form">
+          <div>
             <label>Enter full name: </label>
             <input
               type="text"
@@ -134,12 +136,15 @@ const Profile = () => {
           </div>
         </form>
       </div>
+
       {/* <div className="user-profile">
         <h1>NAME HERE</h1>
 
         <h2>Gender: GENDER HERE</h2>
         <h2>Type of ride: TYPE OF RIDE HERE</h2>
-        <h2>Backcountry: BACKCOUNTRY HERE</h2>
+        <h2> Interest: INTEREST HERE</h2>
+        <h2>Level: LEVEL HERE</h2>
+        <h2>Backcountry: YES OR NO HERE</h2>
         <h2>Personal Story: </h2>
         <p>PERSONAL STORY HERE</p>
         <h3>Contact: CONTACT HERE</h3>

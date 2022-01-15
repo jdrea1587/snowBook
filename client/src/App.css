@@ -49,3 +49,13 @@ body {
   max-width: 100%;
   margin: 10px;
 }
+
+.grid-container-profile {
+  display: grid;
+  border: 1px solid black;
+  grid-template-columns: 1fr;
+  align-items: center;
+  width: 25%;
+  padding: 20px 20px 20px 20px;
+  margin: 20px 20px 20px 20px;
+}
