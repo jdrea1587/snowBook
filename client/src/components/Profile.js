@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import axios from "axios";
 
 const Profile = () => {
   const [newProfile, setNewProfile] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     gender: "",
+    zipCode: "",
     interest: "",
     level: "",
     typeOfRide: "",
@@ -12,15 +14,23 @@ const Profile = () => {
     personalStory: "",
     contactInfo: "",
     isInstructor: false,
-    isOver21: false
+    isOver21: false,
   });
 
-  const testProfile = [];
+  //NEED URL FOR POST
+  // const addProfile = async (e) => {
+  //   return await axios.post("", newProfile);
+  // };
 
-  //NEED URL FOR AXIOS CALL
-  const addProfile = async (e) => {
-    return await axios.post('', newProfile);
-  };
+  //NEED URL FOR PUT
+  // const updateProfile = async () => {
+  //   return await axios.put("", {})
+  // }
+
+  //NEED URL FOR DELETE
+  // const deleteProfile = async () => {
+  //   return await axios.delete("")
+  // }
 
   //to get values from fields
   const handleChange = (e) => {
@@ -29,7 +39,7 @@ const Profile = () => {
 
   // to change to boolean
   const handleBooleans = (e) => {
-    let bool_value = e.target.value == "true" ? true : false;
+    let bool_value = e.target.value === "true" ? true : false;
     setNewProfile({ ...newProfile, [e.target.name]: bool_value });
   };
 
@@ -44,12 +54,20 @@ const Profile = () => {
         Create your profile
         <form onSubmit={handleSubmit}>
           <div>
-            <label>Enter full name: </label>
+            <label>Enter first name: </label>
             <input
               type="text"
-              name="name"
+              name="firstName"
               onChange={handleChange}
-              value={newProfile.name}
+              value={newProfile.firstName}
+            ></input>
+
+            <label>Enter last name: </label>
+            <input
+              type="text"
+              name="lastName"
+              onChange={handleChange}
+              value={newProfile.lastName}
             ></input>
 
             <label>Enter gender: </label>
@@ -58,6 +76,14 @@ const Profile = () => {
               name="gender"
               onChange={handleChange}
               value={newProfile.gender}
+            ></input>
+
+            <label>Enter zip code: </label>
+            <input
+              type="text"
+              name="zipCode"
+              onChange={handleChange}
+              value={newProfile.zipCode}
             ></input>
 
             <label>Enter interest: </label>
@@ -132,25 +158,31 @@ const Profile = () => {
               <option value="false">No</option>
               <option value="true">Yes</option>
             </select>
-            <input type="submit" value="Create Profile"></input>
+            <input
+              type="submit"
+              className="profile-btn"
+              value="Create Profile"
+            ></input>
           </div>
         </form>
       </div>
 
-      {/* <div className="user-profile">
-        <h1>NAME HERE</h1>
-
+      <div className="user-profiles">
+        <h1>FIRST AND LAST NAME HERE</h1>
         <h2>Gender: GENDER HERE</h2>
-        <h2>Type of ride: TYPE OF RIDE HERE</h2>
-        <h2> Interest: INTEREST HERE</h2>
+        <h2>Zip code: ZIP CODE HERE</h2>
+        <h2>Interest: INTEREST HERE</h2>
         <h2>Level: LEVEL HERE</h2>
+        <h2>Type of ride: TYPE OF RIDE HERE</h2>
         <h2>Backcountry: YES OR NO HERE</h2>
         <h2>Personal Story: </h2>
-        <p>PERSONAL STORY HERE</p>
+        <p> PERSONAL STORY HERE</p>
         <h3>Contact: CONTACT HERE</h3>
         <h3>Instructor: YES OR NO HERE</h3>
         <h3>Over 21: YES OR NO HERE</h3>
-      </div> */}
+        <button className="profile-btn">Update profile</button>
+        <button className="profile-btn">Delete profile</button>
+      </div>
     </div>
   );
 };
