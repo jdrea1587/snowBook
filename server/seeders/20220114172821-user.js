@@ -14,8 +14,10 @@ module.exports = {
         contactInfo: "robwilliams0221@gmail.com",
         isInstructor: false,
         isOver21: true,
-        lastName: "Williams",
+        lastName: 'Williams',
         zipCode: 80304,
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         interest: "Snowboarding",
@@ -28,8 +30,10 @@ module.exports = {
         contactInfo: "joshdanielrea@gmail.com",
         isInstructor: true,
         isOver21: true,
-        lastName: "Rea",
+        lastName: 'Rea',
         zipCode: 60618,
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         interest: "Snowboarding",
@@ -42,8 +46,10 @@ module.exports = {
         contactInfo: "therealmichaelnewman@gmail.com",
         isInstructor: false,
         isOver21: true,
-        lastName: "Newman",
+        lastName: 'Newman',
         zipCode: 11101,
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         interest: "Snowboarding",
@@ -57,9 +63,11 @@ module.exports = {
         contactInfo: "lee.soul12@gmail.com",
         isInstructor: false,
         isOver21: true,
-        lastName: "Lee",
+        lastName: 'Lee',
         zipCode: 31909,
-      },
+        createdAt: new Date(),
+        updatedAt: new Date()
+      }
     ]);
   },
 
