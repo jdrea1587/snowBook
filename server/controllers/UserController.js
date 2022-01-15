@@ -1,7 +1,5 @@
 const { User } = require('../models');
 
-//users
-
 const getAllProfiles = async (req, res) => {
   try {
     const users = await User.findAll();
@@ -13,10 +11,10 @@ const getAllProfiles = async (req, res) => {
 
 const getUserProfileById = async (req, res) => {
   try {
-    const { user_id } = req.params;
-    const userProfile = await User.findByPk(req.params.user_id);
+    const { id } = req.params;
+    const userProfile = await User.findByPk(id);
     if (userProfile) {
-      return res.satus(200).json({ userProfile });
+      return res.status(200).json({ userProfile });
     }
     return res.status(404).send('This user does not exist');
   } catch (error) {
@@ -35,27 +33,22 @@ const createProfile = async (req, res) => {
 };
 
 const updateProfile = async (req, res, next) => {
+  console.log(typeof req.params.id);
   try {
-    const { user_id } = req.params;
-    await User.findByIdAndUpdate(id, req.body, { new: true }, (err, user) => {
-      if (err) {
-        // res.status(500).send(err);
-      }
-      if (!user) {
-        // res.status(500).send('User not found');
-      }
-      return res.status(200).json(user);
+    let id = parseInt(req.params.id);
+    const updatedProfile = await User.update(req.body, {
+      where: { id: id },
+      returning: true
     });
+    res.send(updatedProfile);
   } catch (error) {
-    console.log(error.message);
-    return res.status(500);
+    throw error;
   }
 };
 
 const deleteProfile = async (req, res) => {
   try {
-    const { id } = req.params;
-    const deleted = await User.findByIdAndDelete(id);
+    const deleted = await User.destroy({ where: { id: req.params.id } });
     if (deleted) {
       return res.status(200).send('Profile removed');
     }

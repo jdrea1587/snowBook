@@ -10,8 +10,18 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      User.hasMany(models.City, { foreignKey: 'userId' }),
-        User.hasMany(models.skiStore, { foreignKey: 'userId' });
+      User.hasMany(models.City, {
+        foreignKey: 'user_Id',
+        as: 'cities',
+        onDelete: 'cascade',
+        onUpdate: 'cascade'
+      }),
+        User.hasMany(models.skiStore, {
+          foreignKey: 'user_Id',
+          as: 'skistores',
+          onDelete: 'cascade',
+          onUpdate: 'cascade'
+        });
     }
   }
   User.init(
