@@ -15,7 +15,7 @@ module.exports = {
         isInstructor: false,
         isOver21: true,
         lastName: 'Williams',
-        zipCide: 80304
+        zipCode: 80304
       },
       {
         interest: 'Snowboarding',
@@ -29,7 +29,7 @@ module.exports = {
         isInstructor: true,
         isOver21: true,
         lastName: 'Rea',
-        zipCide: 60618
+        zipCode: 60618
       },
       {
         interest: 'Snowboarding',
@@ -43,7 +43,7 @@ module.exports = {
         isInstructor: false,
         isOver21: true,
         lastName: 'Newman',
-        zipCide: 11101
+        zipCode: 11101
       },
       {
         interest: 'Snowboarding',
@@ -58,7 +58,7 @@ module.exports = {
         isInstructor: false,
         isOver21: true,
         lastName: 'Lee',
-        zipCide: 31909
+        zipCode: 31909
       }
     ]);
   },
