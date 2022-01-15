@@ -15,19 +15,19 @@ module.exports = (sequelize, DataTypes) => {
   }
   User.init(
     {
-      cityId: Sequelize.INTEGER,
-      interest: Sequelize.STRING,
-      level: Sequelize.STRING,
-      firstName: Sequelize.STRING,
-      typeOfRide: Sequelize.STRING,
-      isBackcountry: Sequelize.BOOLEAN,
-      gender: Sequelize.STRING,
-      personalStory: Sequelize.STRING,
-      contactInfo: Sequelize.STRING,
-      isInstructor: Sequelize.BOOLEAN,
-      isOver21: Sequelize.BOOLEAN,
-      lastName: Sequelize.STRING,
-      zipCode: Sequelize.INTEGER
+      cityId: DataTypes.INTEGER,
+      interest: DataTypes.STRING,
+      level: DataTypes.STRING,
+      firstName: DataTypes.STRING,
+      typeOfRide: DataTypes.STRING,
+      isBackcountry: DataTypes.BOOLEAN,
+      gender: DataTypes.STRING,
+      personalStory: DataTypes.STRING,
+      contactInfo: DataTypes.STRING,
+      isInstructor: DataTypes.BOOLEAN,
+      isOver21: DataTypes.BOOLEAN,
+      lastName: DataTypes.STRING,
+      zipCode: DataTypes.INTEGER
     },
     {
       sequelize,

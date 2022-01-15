@@ -14,14 +14,14 @@ module.exports = (sequelize, DataTypes) => {
   }
   skiStore.init(
     {
-      cityId: Sequelize.INTEGER,
-      rentalsOffered: Sequelize.BOOLEAN,
-      address: Sequelize.STRING,
-      name: Sequelize.STRING,
-      services: Sequelize.STRING,
-      rating: Sequelize.INTEGER,
-      guidesOffered: Sequelize.BOOLEAN,
-      userId: Sequelize.INTEGER
+      cityId: DataTypes.INTEGER,
+      rentalsOffered: DataTypes.BOOLEAN,
+      address: DataTypes.STRING,
+      name: DataTypes.STRING,
+      services: DataTypes.STRING,
+      rating: DataTypes.INTEGER,
+      guidesOffered: DataTypes.BOOLEAN,
+      userId: DataTypes.INTEGER
     },
     {
       sequelize,

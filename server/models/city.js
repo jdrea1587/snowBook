@@ -14,12 +14,12 @@ module.exports = (sequelize, DataTypes) => {
   }
   City.init(
     {
-      userId: Sequelize.INTEGER,
-      storeId: Sequelize.INTEGER,
-      resorts: Sequelize.STRING,
-      name: Sequelize.STRING,
-      ratings: Sequelize.INTEGER,
-      review: Sequelize.INTEGER
+      userId: DataTypes.INTEGER,
+      storeId: DataTypes.INTEGER,
+      resorts: DataTypes.STRING,
+      name: DataTypes.STRING,
+      ratings: DataTypes.INTEGER,
+      review: DataTypes.INTEGER
     },
     {
       sequelize,
