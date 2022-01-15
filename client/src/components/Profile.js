@@ -3,14 +3,14 @@ import axios from 'axios';
 
 const Profile = () => {
   const [newProfile, setNewProfile] = useState({
-    name: '',
-    gender: '',
-    interest: '',
-    level: '',
-    typeOfRide: '',
-    isBackcountry: '',
-    personalStory: '',
-    contactInfo: '',
+    name: "",
+    gender: "",
+    interest: "",
+    level: "",
+    typeOfRide: "",
+    isBackcountry: false,
+    personalStory: "",
+    contactInfo: "",
     isInstructor: false,
     isOver21: false
   });
@@ -23,13 +23,17 @@ const Profile = () => {
   //to get values from fields
   const handleChange = (e) => {
     setNewProfile({ ...newProfile, [e.target.name]: e.target.value });
-    //console.log(newProfile.isBackcountry);
+  };
+
+  // to change to boolean
+  const handleBooleans = (e) => {
+    let bool_value = e.target.value == "true" ? true : false;
+    setNewProfile({ ...newProfile, [e.target.name]: bool_value });
   };
 
   //to create profile
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('working?');
   };
 
   return (
@@ -59,7 +63,7 @@ const Profile = () => {
               type="text"
               name="interest"
               onChange={handleChange}
-              value={newProfile.name}
+              value={newProfile.interest}
             ></input>
 
             <label>Enter level: </label>
@@ -80,13 +84,13 @@ const Profile = () => {
 
             <label>Back country? </label>
             <select
-              onChange={handleChange}
+              onChange={handleBooleans}
               name="isBackcountry"
               id="isBackcountry"
               value={newProfile.isBackcountry}
             >
               <option value={false}>No</option>
-              <option value="true">Yes</option>
+              <option value={true}>Yes</option>
             </select>
 
             <label>Have a personal story to tell?</label>
@@ -109,7 +113,7 @@ const Profile = () => {
             <select
               name="isInstructor"
               id="isInstructor"
-              onChange={handleChange}
+              onChange={handleBooleans}
               value={newProfile.isInstructor}
             >
               <option value="false">No</option>
@@ -120,7 +124,7 @@ const Profile = () => {
             <select
               name="isOver21"
               id="isOver21"
-              onChange={handleChange}
+              onChange={handleBooleans}
               value={newProfile.isOver21}
             >
               <option value="false">No</option>
