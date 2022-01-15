@@ -23,7 +23,7 @@ const Home = () => {
         <h2>Level: LEVEL HERE</h2>
         <h2>Backcountry: YES OR NO HERE</h2>
         <h2>Personal Story: </h2>
-        <p>PERSONAL STORY HERE</p>
+        <p> PERSONAL STORY HERE</p>
         <h3>Contact: CONTACT HERE</h3>
         <h3>Instructor: YES OR NO HERE</h3>
         <h3>Over 21: YES OR NO HERE</h3>
