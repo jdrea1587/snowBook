@@ -52,10 +52,18 @@ body {
 
 .grid-container-profile {
   display: grid;
-  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px 2px;
   grid-template-columns: 1fr;
+  background-color: #e63bbe;
   align-items: center;
   width: 25%;
   padding: 20px 20px 20px 20px;
   margin: 20px 20px 20px 20px;
+}
+
+.profile-btn {
+  text-decoration: none;
+  padding: 10px;
+  border: none;
 }
