@@ -49,7 +49,7 @@ function App() {
           exact
           path="/storeDetail/:id"
           component={(props) => (
-            <storeDetail {...props} storeDetails={storeDetails} />
+            <StoreDetail {...props} storeDetails={storeDetails} />
           )}
         />
       </main>
