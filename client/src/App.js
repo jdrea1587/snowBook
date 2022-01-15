@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import './App.css';
-import Nav from './components/Nav';
-import Home from './components/Home';
-import Footer from './components/Footer';
-import { Route } from 'react-router-dom';
-import City from './components/City';
-import Profile from './components/Profile';
-import Store from './components/Store';
-import Mountain from './components/Mountain';
-import storeDetail from './components/storeDetail';
+import { useState } from "react";
+import "./App.css";
+import Nav from "./components/Nav";
+import Home from "./components/Home";
+import Footer from "./components/Footer";
+import { Route } from "react-router-dom";
+import City from "./components/City";
+import Profile from "./components/Profile";
+import Store from "./components/Store";
+import Mountain from "./components/Mountain";
+import StoreDetail from "./components/StoreDetail";
 
 function App() {
   const [mountains, setMountains] = useState([]);
@@ -32,7 +32,7 @@ function App() {
           exact
           path="/storeDetail/:id"
           component={(props) => (
-            <storeDetail {...props} storeDetails={storeDetails} />
+            <StoreDetail {...props} storeDetails={storeDetails} />
           )}
         />
       </main>
