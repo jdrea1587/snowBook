@@ -13,10 +13,10 @@ const getAllProfiles = async (req, res) => {
 
 const getUserProfileById = async (req, res) => {
   try {
-    const { user_id } = req.params;
-    const userProfile = await User.findByPk(req.params.user_id);
+    const { id } = req.params;
+    const userProfile = await User.findByPk(id);
     if (userProfile) {
-      return res.satus(200).json({ userProfile });
+      return res.status(200).json({ userProfile });
     }
     return res.status(404).send('This user does not exist');
   } catch (error) {
