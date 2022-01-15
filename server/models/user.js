@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
       isInstructor: DataTypes.BOOLEAN,
       isOver21: DataTypes.BOOLEAN,
       lastName: DataTypes.STRING,
-      zipCide: DataTypes.INTEGER
+      zipCode: DataTypes.INTEGER
     },
     {
       sequelize,

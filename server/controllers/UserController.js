@@ -28,7 +28,7 @@ const createProfile = async (req, res) => {
   try {
     const profile = await User.create(req.body);
     await profile.save();
-    return res.staus(200).json({ profile });
+    return res.status(200).json({ profile });
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }
