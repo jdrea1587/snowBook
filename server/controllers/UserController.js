@@ -36,7 +36,7 @@ const createProfile = async (req, res) => {
 
 const updateProfile = async (req, res, next) => {
   try {
-    const { user_id } = req.params;
+    const { id } = req.params;
     await User.findByIdAndUpdate(id, req.body, { new: true }, (err, user) => {
       if (err) {
         // res.status(500).send(err);
@@ -54,8 +54,8 @@ const updateProfile = async (req, res, next) => {
 
 const deleteProfile = async (req, res) => {
   try {
-    const { id } = req.params;
-    const deleted = await User.findByIdAndDelete(id);
+    // let { id } = req.params;
+    const deleted = await User.destroy({ where: { id: req.params.id } });
     if (deleted) {
       return res.status(200).send('Profile removed');
     }
