@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const Profile = () => {
+const Profile = (props) => {
+  console.log(props);
   const [newProfile, setNewProfile] = useState({
-    name: "",
-    gender: "",
-    interest: "",
-    level: "",
-    typeOfRide: "",
+    name: '',
+    gender: '',
+    interest: '',
+    level: '',
+    typeOfRide: '',
     isBackcountry: false,
-    personalStory: "",
-    contactInfo: "",
+    personalStory: '',
+    contactInfo: '',
     isInstructor: false,
     isOver21: false
   });
@@ -19,7 +20,10 @@ const Profile = () => {
 
   //NEED URL FOR AXIOS CALL
   const addProfile = async (e) => {
-    return await axios.post('', newProfile);
+    return await axios.post(
+      'http://localhost3001/api/createprofile',
+      newProfile
+    );
   };
 
   //to get values from fields
@@ -29,7 +33,7 @@ const Profile = () => {
 
   // to change to boolean
   const handleBooleans = (e) => {
-    let bool_value = e.target.value == "true" ? true : false;
+    let bool_value = e.target.value === 'true' ? true : false;
     setNewProfile({ ...newProfile, [e.target.name]: bool_value });
   };
 
