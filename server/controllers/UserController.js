@@ -1,7 +1,5 @@
 const { User } = require('../models');
 
-//users
-
 const getAllProfiles = async (req, res) => {
   try {
     const users = await User.findAll();
@@ -35,26 +33,21 @@ const createProfile = async (req, res) => {
 };
 
 const updateProfile = async (req, res, next) => {
+  console.log(typeof req.params.id);
   try {
-    const { id } = req.params;
-    await User.findByIdAndUpdate(id, req.body, { new: true }, (err, user) => {
-      if (err) {
-        // res.status(500).send(err);
-      }
-      if (!user) {
-        // res.status(500).send('User not found');
-      }
-      return res.status(200).json(user);
+    let id = parseInt(req.params.id);
+    const updatedProfile = await User.update(req.body, {
+      where: { id: id },
+      returning: true
     });
+    res.send(updatedProfile);
   } catch (error) {
-    console.log(error.message);
-    return res.status(500);
+    throw error;
   }
 };
 
 const deleteProfile = async (req, res) => {
   try {
-    // let { id } = req.params;
     const deleted = await User.destroy({ where: { id: req.params.id } });
     if (deleted) {
       return res.status(200).send('Profile removed');
