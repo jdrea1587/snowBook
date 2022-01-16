@@ -4,7 +4,7 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('cities', [
       {
-        name: 'Summit County, Colorado',
+        name: 'Summit County, Colorado',  
         createdAt: new Date(),
         updatedAt: new Date()
       },
