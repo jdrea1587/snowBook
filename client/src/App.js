@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react';
 import './App.css';
 import Nav from './components/Nav';
@@ -11,12 +12,14 @@ import Mountain from './components/Mountain';
 import StoreDetail from './components/storeDetail';
 import axios from 'axios';
 
+
 function App() {
   const [mountains, setMountains] = useState([]);
   const [storeDetails, setStoreDetails] = useState([]);
   const [profile, setProfile] = useState([]);
   const [store, setStore] = useState([]);
   const [home, setHome] = useState([]);
+
 
   const getHome = async () => {
     const response = await axios.get('http://localhost:3001/');
