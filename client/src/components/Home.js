@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home = ({ profiles, history }) => {
   const showProfiles = (id) => {
-    history.pushState(`/${id}`);
+    history.push(`/${id}`);
   };
 
   return (
