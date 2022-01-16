@@ -49,7 +49,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Name: 'Portland, Oregon',
+        name: 'Portland, Oregon',
         createdAt: new Date(),
         updatedAt: new Date()
       },
