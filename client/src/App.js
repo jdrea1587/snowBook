@@ -1,29 +1,34 @@
-import { useEffect, useState } from "react";
-import "./App.css";
-import Nav from "./components/Nav";
-import Home from "./components/Home";
-import Footer from "./components/Footer";
-import { Route } from "react-router-dom";
-import City from "./components/City";
-import Profile from "./components/Profile";
-import Store from "./components/Store";
-import Mountain from "./components/Mountain";
-import StoreDetail from "./components/StoreDetail";
-import axios from "axios";
+
+import { useEffect, useState } from 'react';
+import './App.css';
+import Nav from './components/Nav';
+import Home from './components/Home';
+import Footer from './components/Footer';
+import { Route } from 'react-router-dom';
+import City from './components/City';
+import Profile from './components/Profile';
+import Store from './components/Store';
+import Mountain from './components/Mountain';
+import StoreDetail from './components/storeDetail';
+import axios from 'axios';
+
 
 function App() {
   const [mountains, setMountains] = useState([]);
   const [storeDetails, setStoreDetails] = useState([]);
   const [profile, setProfile] = useState([]);
   const [store, setStore] = useState([]);
+  const [home, setHome] = useState([]);
 
-  const getProfile = async () => {
-    const response = await axios.get("http://localhost:3001/api");
-    setProfile(response.data.users);
+
+  const getHome = async () => {
+    const response = await axios.get('http://localhost:3001/');
+    setHome(response.data);
+    console.log(response.data);
   };
 
   useEffect(() => {
-    getProfile();
+    getHome();
   }, []);
 
   return (
@@ -35,11 +40,16 @@ function App() {
         <Route
           exact
           path="/"
+          component={(props) => <Home {...props} home={home} />}
+        />
+        <Route
+          exact
+          path="/profile"
           component={(props) => <Profile {...props} profile={profile} />}
         />
         <Route exact path="/city" component={City} />
         <Route exact path="/store" component={Store} />
-        <Route exact path="/profile" component={Profile} />
+
         <Route
           exact
           path="/mountain/:id"
