@@ -1,17 +1,17 @@
 import React from 'react';
 
-const Home = ({ home, history }) => {
-  console.log(home);
+const Home = (props) => {
+  console.log(props.home);
   const showProfiles = (id) => {
-    history.push(`/${id}`);
+    props.history.push(`/${id}`);
   };
 
   return (
     <div className="grid-container">
-      {/* {homes.users.map(
+      {props.home.map(
         ({
           index,
-          _id,
+          id,
           interest,
           level,
           firstName,
@@ -28,12 +28,19 @@ const Home = ({ home, history }) => {
           <div
             key={index}
             className="profile-card"
-            onClick={() => showProfiles(_id)}
+            onClick={() => showProfiles(id)}
           >
-            <div>{firstName}</div>
+            <div>
+              {firstName}
+              {lastName}
+              {interest}
+              {level}
+              {gender}
+              {zipCode}
+            </div>
           </div>
         )
-      )} */}
+      )}
       {/* <div className="home-profiles">
         <h1>FIRST AND LAST NAME HERE</h1>
         <h2>Gender: GENDER HERE</h2>

@@ -8,7 +8,7 @@ import City from './components/City';
 import Profile from './components/Profile';
 import Store from './components/Store';
 import Mountain from './components/Mountain';
-import StoreDetail from './components/storeDetail';
+import StoreDetail from './components/StoreDetail';
 import axios from 'axios';
 
 function App() {
@@ -20,8 +20,8 @@ function App() {
 
   const getHome = async () => {
     const response = await axios.get('http://localhost:3001/api');
-    setHome(response.data);
-    console.log(response.data);
+    console.log(response.data.users);
+    setHome(response.data.users);
   };
 
   useEffect(() => {
