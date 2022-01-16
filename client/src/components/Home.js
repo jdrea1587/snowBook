@@ -1,13 +1,14 @@
 import React from 'react';
 
-const Home = ({ profiles, history }) => {
+const Home = ({ home, history }) => {
+  console.log(home);
   const showProfiles = (id) => {
     history.push(`/${id}`);
   };
 
   return (
     <div className="grid-container">
-      {profiles.map(
+      {/* {homes.users.map(
         ({
           index,
           _id,
@@ -32,7 +33,7 @@ const Home = ({ profiles, history }) => {
             <div>{firstName}</div>
           </div>
         )
-      )}
+      )} */}
       {/* <div className="home-profiles">
         <h1>FIRST AND LAST NAME HERE</h1>
         <h2>Gender: GENDER HERE</h2>
