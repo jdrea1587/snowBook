@@ -4,5 +4,5 @@ const CityRouter = require('./CityRouter');
 const SkistoreRouter = require('./SkistoreRouter');
 AppRouter.use('/users', UserRouter);
 AppRouter.use('/cities', CityRouter);
-// AppRouter.use('/skistore', SkistoreRouter);
+AppRouter.use('/skistores', SkistoreRouter);
 module.exports = AppRouter;
