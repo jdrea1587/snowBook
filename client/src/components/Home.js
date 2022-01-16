@@ -1,26 +1,38 @@
-import React from "react";
+import React from 'react';
 
-const Home = () => {
-  // const [displayUsers, setDisplayUsers] = useState([])
-
-  //useEffect to display users
-  // useEffect(() => {
-
-  // }, [])
+const Home = ({ profiles, history }) => {
+  const showProfiles = (id) => {
+    history.push(`/${id}`);
+  };
 
   return (
     <div className="grid-container">
-      <ul>name 1</ul>
-      <ul>name 2</ul>
-      <ul>name 3</ul>
-      <ul>name 4</ul>
-      <ul>name 5</ul>
-      <ul>name 6</ul>
-      <ul>name 7</ul>
-      <ul>name 8</ul>
-      <ul>name 9</ul>
-      <ul>name 10</ul>
-
+      {profiles.map(
+        ({
+          index,
+          _id,
+          interest,
+          level,
+          firstName,
+          typeOfRide,
+          isBackcountry,
+          gender,
+          personalStory,
+          contactInfo,
+          isInstructor,
+          isOver21,
+          lastName,
+          zipCode
+        }) => (
+          <div
+            key={index}
+            className="profile-card"
+            onClick={() => showProfiles(_id)}
+          >
+            <div>{firstName}</div>
+          </div>
+        )
+      )}
       {/* <div className="home-profiles">
         <h1>FIRST AND LAST NAME HERE</h1>
         <h2>Gender: GENDER HERE</h2>

@@ -1,26 +1,35 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useState } from 'react';
+import axios from 'axios';
 
-const Profile = () => {
+const Profile = (props) => {
+  console.log(props);
   const [newProfile, setNewProfile] = useState({
-    firstName: "",
-    lastName: "",
-    gender: "",
-    zipCode: "",
-    interest: "",
-    level: "",
-    typeOfRide: "",
+    typeOfRide: '',
+    firstName: '',
+    lastName: '',
+    gender: '',
+    zipCode: '',
+    interest: '',
+    level: '',
     isBackcountry: false,
-    personalStory: "",
-    contactInfo: "",
+    personalStory: '',
+    contactInfo: '',
     isInstructor: false,
-    isOver21: false,
+    isOver21: false
   });
 
   //NEED URL FOR POST
   // const addProfile = async (e) => {
   //   return await axios.post("", newProfile);
   // };
+
+  //NEED URL FOR AXIOS CALL
+  const addProfile = async (e) => {
+    return await axios.post(
+      'http://localhost3001/api/createprofile',
+      newProfile
+    );
+  };
 
   //NEED URL FOR PUT
   // const updateProfile = async () => {
@@ -39,7 +48,7 @@ const Profile = () => {
 
   // to change to boolean
   const handleBooleans = (e) => {
-    let bool_value = e.target.value === "true" ? true : false;
+    let bool_value = e.target.value === 'true' ? true : false;
     setNewProfile({ ...newProfile, [e.target.name]: bool_value });
   };
 
