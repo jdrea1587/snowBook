@@ -1,16 +1,17 @@
-import React from 'react';
+import React from "react";
 
-const Home = ({ profiles, history }) => {
+const Home = (props) => {
+  console.log(props.home);
   const showProfiles = (id) => {
-    history.pushState(`/${id}`);
+    props.history.push(`/${id}`);
   };
 
   return (
     <div className="grid-container">
-      {profiles.map(
+      {props.home.map(
         ({
           index,
-          _id,
+          id,
           interest,
           level,
           firstName,
@@ -22,14 +23,21 @@ const Home = ({ profiles, history }) => {
           isInstructor,
           isOver21,
           lastName,
-          zipCode
+          zipCode,
         }) => (
           <div
             key={index}
             className="profile-card"
-            onClick={() => showProfiles(_id)}
+            onClick={() => showProfiles(id)}
           >
-            <div>{firstName}</div>
+            <div>
+              {firstName}
+              {lastName}
+              {interest}
+              {level}
+              {gender}
+              {zipCode}
+            </div>
           </div>
         )
       )}
