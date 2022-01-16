@@ -2,7 +2,7 @@ const app = require('express')();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-const routes = require('../snowBook/server/routes/UserRouter');
+const routes = require('../snowBook/server/routes/AppRouter');
 
 const PORT = process.env.PORT || 3001;
 

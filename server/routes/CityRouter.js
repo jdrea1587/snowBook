@@ -4,7 +4,7 @@ const router = Router();
 
 router.get('/', controller.getAllCities);
 router.get('/:id', controller.getCityById);
-router.post('/createprofile', controller.createCity);
+router.post('/createcity', controller.createCity);
 router.put('/:id', controller.updateCity);
 router.delete('/:id', controller.deleteCity);
 
