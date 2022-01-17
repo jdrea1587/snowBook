@@ -24,8 +24,14 @@ function App() {
     setHome(response.data.users);
   };
 
+  const getStore = async () => {
+    const response = await axios.get("http://localhost:3001/api/skistores");
+    setStore(response.data.skistores);
+  };
+
   useEffect(() => {
     getHome();
+    getStore();
   }, []);
 
   return (
@@ -50,7 +56,11 @@ function App() {
           component={(props) => <ProfileDetail {...props} />}
         />
         <Route exact path="/city" component={City} />
-        <Route exact path="/store" component={Store} />
+        <Route
+          exact
+          path="/store"
+          component={(props) => <Store {...props} store={store} />}
+        />
 
         <Route
           exact

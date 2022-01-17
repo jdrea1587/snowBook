@@ -7,35 +7,18 @@ const Home = (props) => {
 
   return (
     <div className="grid-container">
-      {props.home.map(
-        ({
-          index,
-          id,
-          interest,
-          level,
-          firstName,
-          typeOfRide,
-          isBackcountry,
-          gender,
-          personalStory,
-          contactInfo,
-          isInstructor,
-          isOver21,
-          lastName,
-          zipCode,
-        }) => (
-          <div
-            key={index}
-            className="profile-card"
-            onClick={() => showProfiles(id)}
-          >
-            <div>
-              {firstName}
-              {lastName}
-            </div>
+      {props.home.map((ele, idx) => (
+        <div
+          key={idx}
+          className="profile-card"
+          onClick={() => showProfiles(ele.id)}
+        >
+          <div key={idx}>
+            {ele.firstName}
+            {ele.lastName}
           </div>
-        )
-      )}
+        </div>
+      ))}
     </div>
   );
 };

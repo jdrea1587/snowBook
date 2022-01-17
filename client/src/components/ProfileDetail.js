@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import Form from './Form';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import Form from "./Form";
 
 const ProfileDetail = (props) => {
   let _id = props.match.params.id;
@@ -18,7 +18,7 @@ const ProfileDetail = (props) => {
     personalStory: [],
     contactInfo: [],
     isInstructor: [],
-    isOver21: []
+    isOver21: [],
   });
 
   const displayUser = async () => {
@@ -30,7 +30,7 @@ const ProfileDetail = (props) => {
     const response = await axios.delete(
       `http://localhost:3001/api/users/${_id}`
     );
-    props.history.push(`/${_id}`);
+    props.history.push("/");
   };
 
   const handleChange = (e) => {
@@ -38,21 +38,22 @@ const ProfileDetail = (props) => {
   };
 
   const handleBooleans = (e) => {
-    let bool_value = e.target.value === 'true' ? true : false;
+    let bool_value = e.target.value === "true" ? true : false;
     setUpdateProfile({ ...updateProfile, [e.target.name]: bool_value });
   };
 
   const updateUserProfile = async (e) => {
-    //e.preventDefault();
+    e.preventDefault();
     const response = await axios.put(
       `http://localhost:3001/api/users/${_id}`,
       updateProfile
     );
+    console.log(updateProfile);
   };
 
-  const handleUpdate = (e) => {
-    updateProfile();
-    props.history.push(`/${_id}`);
+  const handleUpdate = () => {
+    updateUserProfile();
+    props.history.push(`/profiledetail/${_id}`);
   };
 
   useEffect(() => {

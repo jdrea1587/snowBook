@@ -176,7 +176,7 @@ const Profile = (props) => {
         </form>
       </div>
 
-      <div className="user-profiles">
+      {/* <div className="user-profiles">
         <h1>FIRST AND LAST NAME HERE</h1>
         <h2>Gender: GENDER HERE</h2>
         <h2>Zip code: ZIP CODE HERE</h2>
@@ -191,7 +191,7 @@ const Profile = (props) => {
         <h3>Over 21: YES OR NO HERE</h3>
         <button className="profile-btn">Update profile</button>
         <button className="profile-btn">Delete profile</button>
-      </div>
+      </div> */}
     </div>
   );
 };
