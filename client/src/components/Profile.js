@@ -36,11 +36,6 @@ const Profile = (props) => {
   //   return await axios.put("", {})
   // }
 
-  //NEED URL FOR DELETE
-  // const deleteProfile = async () => {
-  //   return await axios.delete("")
-  // }
-
   //to get values from fields
   const handleChange = (e) => {
     setNewProfile({ ...newProfile, [e.target.name]: e.target.value });
