@@ -19,8 +19,7 @@ function App() {
   const [home, setHome] = useState([]);
 
   const getHome = async () => {
-    const response = await axios.get("http://localhost:3001/api");
-    console.log(response.data.users);
+    const response = await axios.get("http://localhost:3001/api/users");
     setHome(response.data.users);
   };
 

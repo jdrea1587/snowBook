@@ -26,7 +26,7 @@ const Profile = (props) => {
   //NEED URL FOR AXIOS CALL
   const addProfile = async (e) => {
     return await axios.post(
-      "http://localhost3001/api/createprofile",
+      "http://localhost:3001/api/users/createprofile",
       newProfile
     );
   };
@@ -53,15 +53,15 @@ const Profile = (props) => {
   };
 
   //to create profile
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  // };
 
   return (
     <div>
       <div className="grid-container-profile">
         Create your profile
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={addProfile}>
           <div>
             <label>Enter first name: </label>
             <input
