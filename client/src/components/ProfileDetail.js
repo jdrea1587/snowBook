@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const ProfileDetail = (props) => {
+  console.log(props);
   const [profileDetails, setProfileDetails] = useState([]);
 
   const displayUser = async () => {
@@ -9,6 +10,13 @@ const ProfileDetail = (props) => {
       `http://localhost:3001/api/users/${props.match.params.id}`
     );
     setProfileDetails(response.data.userProfile);
+  };
+
+  const deleteProfile = async () => {
+    const response = await axios.delete(
+      `http://localhost:3001/api/users/${props.match.params.id}`
+    );
+    props.history.push("/");
   };
 
   useEffect(() => {
@@ -31,7 +39,9 @@ const ProfileDetail = (props) => {
         <h3>Instructor: YES OR NO HERE</h3>
         <h3>Over 21: YES OR NO HERE</h3>
         <button className="profile-btn">Update profile</button>
-        <button className="profile-btn">Delete profile</button>
+        <button className="profile-btn" onClick={deleteProfile}>
+          Delete profile
+        </button>
       </div>
     </div>
   );
