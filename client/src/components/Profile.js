@@ -52,11 +52,6 @@ const Profile = (props) => {
     setNewProfile({ ...newProfile, [e.target.name]: bool_value });
   };
 
-  //to create profile
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  // };
-
   return (
     <div>
       <div className="grid-container-profile">

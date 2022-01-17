@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import { Route } from "react-router-dom";
 import City from "./components/City";
 import Profile from "./components/Profile";
+import ProfileDetail from "./components/ProfileDetail";
 import Store from "./components/Store";
 import Mountain from "./components/Mountain";
 import StoreDetail from "./components/StoreDetail";
@@ -42,6 +43,11 @@ function App() {
           exact
           path="/profile"
           component={(props) => <Profile {...props} profile={profile} />}
+        />
+        <Route
+          exact
+          path="/profiledetail/:id"
+          component={(props) => <ProfileDetail {...props} />}
         />
         <Route exact path="/city" component={City} />
         <Route exact path="/store" component={Store} />
