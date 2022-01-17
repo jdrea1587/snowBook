@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import Form from "./Form";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import Form from './Form';
 
 const ProfileDetail = (props) => {
+  let _id = props.match.params.id;
   const [profileDetails, setProfileDetails] = useState([]);
   const [updateProfile, setUpdateProfile] = useState({
     typeOfRide: [],
@@ -17,21 +18,19 @@ const ProfileDetail = (props) => {
     personalStory: [],
     contactInfo: [],
     isInstructor: [],
-    isOver21: [],
+    isOver21: []
   });
 
   const displayUser = async () => {
-    const response = await axios.get(
-      `http://localhost:3001/api/users/${props.match.params.id}`
-    );
+    const response = await axios.get(`http://localhost:3001/api/users/${_id}`);
     setProfileDetails(response.data.userProfile);
   };
 
   const deleteProfile = async () => {
     const response = await axios.delete(
-      `http://localhost:3001/api/users/${props.match.params.id}`
+      `http://localhost:3001/api/users/${_id}`
     );
-    props.history.push("/");
+    props.history.push(`/${_id}`);
   };
 
   const handleChange = (e) => {
@@ -39,19 +38,21 @@ const ProfileDetail = (props) => {
   };
 
   const handleBooleans = (e) => {
-    let bool_value = e.target.value === "true" ? true : false;
+    let bool_value = e.target.value === 'true' ? true : false;
     setUpdateProfile({ ...updateProfile, [e.target.name]: bool_value });
   };
 
   const updateUserProfile = async (e) => {
     //e.preventDefault();
-
     const response = await axios.put(
-      `http://localhost:3001/api/users/${props.match.params.id}`,
+      `http://localhost:3001/api/users/${_id}`,
       updateProfile
     );
+  };
 
-    //console.log(updateProfile);
+  const handleUpdate = (e) => {
+    updateProfile();
+    props.history.push(`/${_id}`);
   };
 
   useEffect(() => {
@@ -83,6 +84,7 @@ const ProfileDetail = (props) => {
             handleBooleans={handleBooleans}
             updateProfile={updateProfile}
             updateUserProfile={updateUserProfile}
+            handleUpdate={handleUpdate}
           />
         </div>
 
