@@ -19,12 +19,13 @@ const Profile = (props) => {
   });
 
   const addProfile = async (e) => {
-    return await axios.post(
+    e.preventDefault();
+    const response = await axios.post(
       "http://localhost:3001/api/users/createprofile",
       newProfile
     );
+    console.log(newProfile.id);
   };
-
   //to get values from fields
   const handleChange = (e) => {
     setNewProfile({ ...newProfile, [e.target.name]: e.target.value });
