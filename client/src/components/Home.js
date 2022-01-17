@@ -1,9 +1,8 @@
 import React from "react";
 
 const Home = (props) => {
-  console.log(props.home);
   const showProfiles = (id) => {
-    props.history.push(`/${id}`);
+    props.history.push(`/profiledetail/${id}`);
   };
 
   return (
