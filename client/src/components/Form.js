@@ -1,46 +1,34 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
 
-const Profile = (props) => {
-  const [newProfile, setNewProfile] = useState({
-    typeOfRide: "",
-    firstName: "",
-    lastName: "",
-    image: "",
-    gender: "",
-    zipCode: "",
-    interest: "",
-    level: "",
-    isBackcountry: false,
-    personalStory: "",
-    contactInfo: "",
-    isInstructor: false,
-    isOver21: false,
-  });
-
-  const addProfile = async (e) => {
-    return await axios.post(
-      "http://localhost:3001/api/users/createprofile",
-      newProfile
-    );
+const Form = ({
+  updateUserProfile,
+  handleChange,
+  handleBooleans,
+  updateProfile,
+}) => {
+  let previousData = {
+    typeOfRide: "Type of Ride",
+    firstName: "First Name",
+    image: "Image URL",
+    lastName: "Last Name",
+    gender: "Gender",
+    zipCode: "Zip Code",
+    interest: "Interest",
+    level: "Level",
+    isBackcountry: "Back country?",
+    personalStory: "Personal Story",
+    contactInfo: "Contact info",
+    isInstructor: "Instructor",
+    isOver21: "Over 21",
   };
 
-  //to get values from fields
-  const handleChange = (e) => {
-    setNewProfile({ ...newProfile, [e.target.name]: e.target.value });
-  };
-
-  // to change to boolean
-  const handleBooleans = (e) => {
-    let bool_value = e.target.value === "true" ? true : false;
-    setNewProfile({ ...newProfile, [e.target.name]: bool_value });
-  };
+  //if (props.user) previousData = props.user;
 
   return (
     <div>
       <div for="first-name" className="grid-container-profile">
-        Create your profile
-        <form className="form" onSubmit={addProfile}>
+        Update your profile
+        <form className="form" onSubmit={updateUserProfile}>
           <div>
             <label>Enter first name: </label>
             <input
@@ -48,7 +36,7 @@ const Profile = (props) => {
               type="text"
               name="firstName"
               onChange={handleChange}
-              value={newProfile.firstName}
+              value={updateProfile.firstName}
             ></input>
 
             <label for="last-name">Enter last name: </label>
@@ -57,16 +45,16 @@ const Profile = (props) => {
               type="text"
               name="lastName"
               onChange={handleChange}
-              value={newProfile.lastName}
+              value={updateProfile.lastName}
             ></input>
 
-            <label for="last-name">Enter image URL: </label>
+            <label for="image">Enter image URL</label>
             <input
               id="image"
               type="text"
               name="image"
               onChange={handleChange}
-              value={newProfile.image}
+              value={updateProfile.image}
             ></input>
 
             <label for="gender">Enter gender: </label>
@@ -75,7 +63,7 @@ const Profile = (props) => {
               type="text"
               name="gender"
               onChange={handleChange}
-              value={newProfile.gender}
+              value={updateProfile.gender}
             ></input>
 
             <label for="zip">Enter zip code: </label>
@@ -84,7 +72,7 @@ const Profile = (props) => {
               type="text"
               name="zipCode"
               onChange={handleChange}
-              value={newProfile.zipCode}
+              value={updateProfile.zipCode}
             ></input>
 
             <label for="interest">Enter interest: </label>
@@ -93,7 +81,7 @@ const Profile = (props) => {
               type="text"
               name="interest"
               onChange={handleChange}
-              value={newProfile.interest}
+              value={updateProfile.interest}
             ></input>
 
             <label for="level">Enter level: </label>
@@ -102,7 +90,7 @@ const Profile = (props) => {
               type="text"
               name="level"
               onChange={handleChange}
-              value={newProfile.level}
+              value={updateProfile.level}
             ></input>
 
             <label for="ride">Enter ride: </label>
@@ -111,7 +99,7 @@ const Profile = (props) => {
               type="text"
               name="typeOfRide"
               onChange={handleChange}
-              value={newProfile.typeOfRide}
+              value={updateProfile.typeOfRide}
             ></input>
 
             <label for="country">Back country? </label>
@@ -120,7 +108,7 @@ const Profile = (props) => {
               onChange={handleBooleans}
               name="isBackcountry"
               id="isBackcountry"
-              value={newProfile.isBackcountry}
+              value={updateProfile.isBackcountry}
             >
               <option value={false}>No</option>
               <option value={true}>Yes</option>
@@ -132,7 +120,7 @@ const Profile = (props) => {
               type="text"
               name="personalStory"
               onChange={handleChange}
-              value={newProfile.personalStory}
+              value={updateProfile.personalStory}
             ></input>
 
             <label for="contact">Method of contact</label>
@@ -141,7 +129,7 @@ const Profile = (props) => {
               type="text"
               name="contactInfo"
               onChange={handleChange}
-              value={newProfile.contactInfo}
+              value={updateProfile.contactInfo}
             ></input>
 
             <label for="instructor">Instructor?</label>
@@ -150,7 +138,7 @@ const Profile = (props) => {
               name="isInstructor"
               id="isInstructor"
               onChange={handleBooleans}
-              value={newProfile.isInstructor}
+              value={updateProfile.isInstructor}
             >
               <option value="false">No</option>
               <option value="true">Yes</option>
@@ -162,7 +150,7 @@ const Profile = (props) => {
               name="isOver21"
               id="isOver21"
               onChange={handleBooleans}
-              value={newProfile.isOver21}
+              value={updateProfile.isOver21}
             >
               <option value="false">No</option>
               <option value="true">Yes</option>
@@ -170,30 +158,13 @@ const Profile = (props) => {
             <input
               type="submit"
               className="profile-btn"
-              value="Create Profile"
+              value="Update Profile"
             ></input>
           </div>
         </form>
-      </div>
-
-      <div className="user-profiles">
-        <h1>FIRST AND LAST NAME HERE</h1>
-        <h2>Gender: GENDER HERE</h2>
-        <h2>Zip code: ZIP CODE HERE</h2>
-        <h2>Interest: INTEREST HERE</h2>
-        <h2>Level: LEVEL HERE</h2>
-        <h2>Type of ride: TYPE OF RIDE HERE</h2>
-        <h2>Backcountry: YES OR NO HERE</h2>
-        <h2>Personal Story: </h2>
-        <p> PERSONAL STORY HERE</p>
-        <h3>Contact: CONTACT HERE</h3>
-        <h3>Instructor: YES OR NO HERE</h3>
-        <h3>Over 21: YES OR NO HERE</h3>
-        <button className="profile-btn">Update profile</button>
-        <button className="profile-btn">Delete profile</button>
       </div>
     </div>
   );
 };
 
-export default Profile;
+export default Form;
