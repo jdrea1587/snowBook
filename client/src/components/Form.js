@@ -1,34 +1,33 @@
-import React from "react";
+import React from 'react';
 
 const Form = ({
   updateUserProfile,
   handleChange,
   handleBooleans,
   updateProfile,
+  handleUpdate
 }) => {
   let previousData = {
-    typeOfRide: "Type of Ride",
-    firstName: "First Name",
-    image: "Image URL",
-    lastName: "Last Name",
-    gender: "Gender",
-    zipCode: "Zip Code",
-    interest: "Interest",
-    level: "Level",
-    isBackcountry: "Back country?",
-    personalStory: "Personal Story",
-    contactInfo: "Contact info",
-    isInstructor: "Instructor",
-    isOver21: "Over 21",
+    typeOfRide: [],
+    firstName: [],
+    image: [],
+    lastName: [],
+    gender: [],
+    zipCode: [],
+    interest: [],
+    level: [],
+    isBackcountry: [],
+    personalStory: [],
+    contactInfo: [],
+    isInstructor: [],
+    isOver21: []
   };
-
-  //if (props.user) previousData = props.user;
 
   return (
     <div>
       <div for="first-name" className="grid-container-profile">
         Update your profile
-        <form className="form" onSubmit={updateUserProfile}>
+        <form className="form" onSubmit={handleUpdate}>
           <div>
             <label>Enter first name: </label>
             <input
