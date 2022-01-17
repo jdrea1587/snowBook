@@ -38,7 +38,8 @@ module.exports = (sequelize, DataTypes) => {
       isInstructor: DataTypes.BOOLEAN,
       isOver21: DataTypes.BOOLEAN,
       lastName: DataTypes.STRING,
-      zipCode: DataTypes.INTEGER
+      zipCode: DataTypes.INTEGER,
+      image: DataTypes.STRING
     },
     {
       sequelize,
