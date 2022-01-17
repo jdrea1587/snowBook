@@ -25,7 +25,7 @@ const Home = (props) => {
           zipCode,
         }) => (
           <div
-            key={index}
+            key={id}
             className="profile-card"
             onClick={() => showProfiles(id)}
           >
