@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const Form = ({
@@ -6,22 +7,23 @@ const Form = ({
   handleBooleans,
   updateProfile
 }) => {
+
   return (
     <div>
       <div for="first-name" className="grid-container-profile">
         Update your profile
-        <form className="form" onSubmit={updateUserProfile}>
+        <form className="form" onSubmit={props.updateUserProfile}>
           <div>
             <label>Enter first name: </label>
             <input
               id="first-name"
               type="text"
               name="firstName"
-              onChange={handleChange}
-              value={updateProfile.firstName}
+              onChange={props.handleChange}
+              value={props.updateProfile.firstName}
             ></input>
 
-            <label for="last-name">Enter last name: </label>
+            {/* <label for="last-name">Enter last name: </label>
             <input
               id="last-name"
               type="text"
@@ -141,7 +143,7 @@ const Form = ({
               type="submit"
               className="profile-btn"
               value="Update Profile"
-            ></input>
+            ></input> */}
           </div>
         </form>
       </div>
