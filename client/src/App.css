@@ -96,19 +96,24 @@ a {
   padding-top: 100px;
 }
 
-.grid-container-profile {
+.test {
+  margin: 0;
+}
+
+/* .grid-container-profile {
   display: grid;
   border-radius: 10px;
   box-shadow: 5px 5px 10px 2px;
   grid-template-columns: 1fr;
-  background-color: hsl(184, 83%, 57%);
+  background-color: hsl(0, 0%, 99%);
   align-items: center;
   width: 25%;
   padding: 20px 20px 20px 20px;
   margin: 20px 20px 20px 20px;
   justify-content: center;
   padding-top: 100px;
-}
+  height: 60px;
+} */
 
 .profile-btn {
   text-decoration: none;
@@ -117,19 +122,24 @@ a {
   border: none;
 }
 
-.form {
+form {
   max-width: 500px;
+  max-height: 100%;
   margin: 2rem auto;
-  border: 2px solid black;
   padding: 2rem;
   justify-content: center;
   padding-top: 100px;
   padding-bottom: 100px;
+  height: 50%;
+  background-color: white;
+  display: inline-block !important;
+  border-radius: 25px;
 }
 
 label {
   display: block;
   padding: 0.5rem 0;
+  margin: 0.5px;
 }
 input,
 textarea {
@@ -137,6 +147,7 @@ textarea {
   width: 100%;
   border: 1px solid black;
   border-radius: 5px;
+  margin: 0.5px;
 }
 
 .profile-btn {
@@ -148,6 +159,16 @@ textarea {
   width: auto;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+.create-profile-btn {
+  text-decoration: none;
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  color: white;
+  background-color: #175cca;
+  font-weight: 900;
 }
 
 .profile-btn:hover {
@@ -196,4 +217,17 @@ textarea {
 }
 .user-info {
   margin: auto;
+}
+
+.blank-image {
+  /* margin-left: 100px; */
+  max-width: 150px;
+  min-width: 150px;
+  max-height: 150px;
+  min-height: 150px;
+  border-radius: 50%;
+}
+
+input {
+  margin-top: 10px;
 }
