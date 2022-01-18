@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Home = (props) => {
   const showProfiles = (id) => {
@@ -13,9 +13,10 @@ const Home = (props) => {
           className="profile-card"
           onClick={() => showProfiles(ele.id)}
         >
-          <div key={idx}>
+          <div className="profile-names" key={idx}>
             {ele.firstName}
             {ele.lastName}
+            <img src={ele.image} />
           </div>
         </div>
       ))}

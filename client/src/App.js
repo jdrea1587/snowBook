@@ -1,16 +1,16 @@
-import { useEffect, useState } from "react";
-import "./App.css";
-import Nav from "./components/Nav";
-import Home from "./components/Home";
-import Footer from "./components/Footer";
-import { Route } from "react-router-dom";
-import City from "./components/City";
-import Profile from "./components/Profile";
-import ProfileDetail from "./components/ProfileDetail";
-import Store from "./components/Store";
-import Mountain from "./components/Mountain";
-import StoreDetail from "./components/StoreDetail";
-import axios from "axios";
+import { useEffect, useState } from 'react';
+import './App.css';
+import Nav from './components/Nav';
+import Home from './components/Home';
+import Footer from './components/Footer';
+import { Route } from 'react-router-dom';
+import City from './components/City';
+import Profile from './components/Profile';
+import ProfileDetail from './components/ProfileDetail';
+import Store from './components/Store';
+import Mountain from './components/Mountain';
+import StoreDetail from './components/StoreDetail';
+import axios from 'axios';
 
 function App() {
   const [mountains, setMountains] = useState([]);
@@ -20,12 +20,13 @@ function App() {
   const [home, setHome] = useState([]);
 
   const getHome = async () => {
-    const response = await axios.get("http://localhost:3001/api/users");
+    const response = await axios.get('http://localhost:3001/api/users');
+    console.log(response.data.users);
     setHome(response.data.users);
   };
 
   const getStore = async () => {
-    const response = await axios.get("http://localhost:3001/api/skistores");
+    const response = await axios.get('http://localhost:3001/api/skistores');
     setStore(response.data.skistores);
   };
 
