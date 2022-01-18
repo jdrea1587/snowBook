@@ -1,29 +1,11 @@
-import React from "react";
+import React from 'react';
 
 const Form = ({
   updateUserProfile,
   handleChange,
   handleBooleans,
-  updateProfile,
-  handleUpdate,
-  profileDetails,
+  updateProfile
 }) => {
-  let previousData = {
-    typeOfRide: profileDetails.typeOfRide,
-    firstName: profileDetails.firstName,
-    image: profileDetails.image,
-    lastName: profileDetails.lastName,
-    gender: profileDetails.gender,
-    zipCode: profileDetails.zipCode,
-    interest: profileDetails.interest,
-    level: profileDetails.level,
-    isBackcountry: profileDetails.isBackcountry,
-    personalStory: profileDetails.personalStory,
-    contactInfo: profileDetails.contactInfo,
-    isInstructor: profileDetails.isInstructor,
-    isOver21: profileDetails.isOver21,
-  };
-
   return (
     <div>
       <div for="first-name" className="grid-container-profile">
