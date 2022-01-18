@@ -141,7 +141,7 @@ textarea {
 
 .profile-btn {
   border: 0;
-  background-color: black;
+  background-color: rgb(25, 8, 121);
   padding: 0.5rem;
   color: white;
   margin: 1rem 0;
@@ -172,19 +172,19 @@ textarea {
   padding: 20px;
   border-radius: 15px;
   color: rgb(9, 8, 21);
-  font-weight: 900;
+  font-weight: bolder;
   font-size: larger;
   cursor: pointer;
   margin: 15px 0;
   max-width: 175px;
   font-family: 'Rubik', sans-serif;
+  /* background-color: white; */
 }
 
 .user-profiles {
   display: flex;
   flex-direction: row;
 }
-
 .profile-names img {
   max-width: 150px;
   min-width: 150px;
@@ -193,4 +193,7 @@ textarea {
   object-fit: cover;
   border-radius: 50%;
   border: white 2.5px solid;
+}
+.user-info {
+  margin: auto;
 }

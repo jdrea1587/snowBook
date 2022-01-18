@@ -14,9 +14,9 @@ const Home = (props) => {
           onClick={() => showProfiles(ele.id)}
         >
           <div className="profile-names" key={idx}>
-            {ele.firstName}
-            {ele.lastName}
             <img src={ele.image} />
+            <div>{ele.firstName}</div>
+            <div>{ele.lastName}</div>
           </div>
         </div>
       ))}
