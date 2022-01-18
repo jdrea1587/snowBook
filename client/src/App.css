@@ -1,6 +1,6 @@
-* {
+/* * {
   font-family: sans-serif;
-}
+} */
 
 .App {
   display: flex;
@@ -27,6 +27,13 @@ body {
   padding: 30px;
   /* position: fixed; */
   width: 100%;
+}
+
+.logo {
+  max-height: 35px;
+  max-width: 35px;
+  min-height: 35px;
+  min-width: 35px;
 }
 
 .navDiv {
@@ -161,7 +168,7 @@ textarea {
 }
 
 .profile-card {
-  border: 2px solid black;
+  /* border: 2px solid white; */
   padding: 20px;
   border-radius: 15px;
   color: rgb(9, 8, 21);
@@ -170,7 +177,7 @@ textarea {
   cursor: pointer;
   margin: 15px 0;
   max-width: 175px;
-  font-family: 'Trade Winds', cursive !important;
+  font-family: 'Rubik', sans-serif;
 }
 
 .user-profiles {
@@ -185,4 +192,5 @@ textarea {
   min-height: 150px;
   object-fit: cover;
   border-radius: 50%;
+  border: white 2.5px solid;
 }
