@@ -5,25 +5,7 @@ const Form = ({
   handleChange,
   handleBooleans,
   updateProfile,
-  handleUpdate,
-  profileDetails,
 }) => {
-  let previousData = {
-    typeOfRide: profileDetails.typeOfRide,
-    firstName: profileDetails.firstName,
-    image: profileDetails.image,
-    lastName: profileDetails.lastName,
-    gender: profileDetails.gender,
-    zipCode: profileDetails.zipCode,
-    interest: profileDetails.interest,
-    level: profileDetails.level,
-    isBackcountry: profileDetails.isBackcountry,
-    personalStory: profileDetails.personalStory,
-    contactInfo: profileDetails.contactInfo,
-    isInstructor: profileDetails.isInstructor,
-    isOver21: profileDetails.isOver21,
-  };
-
   return (
     <div>
       <div for="first-name" className="grid-container-profile">
@@ -39,7 +21,7 @@ const Form = ({
               value={updateProfile.firstName}
             ></input>
 
-            <label for="last-name">Enter last name: </label>
+            {/* <label for="last-name">Enter last name: </label>
             <input
               id="last-name"
               type="text"
@@ -154,7 +136,7 @@ const Form = ({
             >
               <option value="false">No</option>
               <option value="true">Yes</option>
-            </select>
+            </select> */}
             <input
               type="submit"
               className="profile-btn"
