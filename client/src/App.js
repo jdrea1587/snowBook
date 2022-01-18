@@ -48,7 +48,14 @@ function App() {
         <Route
           exact
           path="/profile"
-          component={(props) => <Profile {...props} profile={profile} />}
+          component={(props) => (
+            <Profile
+              {...props}
+              profile={profile}
+              home={home}
+              getHome={getHome}
+            />
+          )}
         />
         <Route
           exact
