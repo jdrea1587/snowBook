@@ -1,45 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
+import axios from "axios";
 
-const Form = ({
-  updateUserProfile,
-  handleChange,
-  handleBooleans,
-  updateProfile,
-  handleUpdate,
-  profileDetails,
-}) => {
-  let previousData = {
-    typeOfRide: profileDetails.typeOfRide,
-    firstName: profileDetails.firstName,
-    image: profileDetails.image,
-    lastName: profileDetails.lastName,
-    gender: profileDetails.gender,
-    zipCode: profileDetails.zipCode,
-    interest: profileDetails.interest,
-    level: profileDetails.level,
-    isBackcountry: profileDetails.isBackcountry,
-    personalStory: profileDetails.personalStory,
-    contactInfo: profileDetails.contactInfo,
-    isInstructor: profileDetails.isInstructor,
-    isOver21: profileDetails.isOver21,
-  };
-
+const Form = (props) => {
   return (
     <div>
       <div for="first-name" className="grid-container-profile">
         Update your profile
-        <form className="form" onSubmit={updateUserProfile}>
+        <form className="form" onSubmit={props.updateUserProfile}>
           <div>
             <label>Enter first name: </label>
             <input
               id="first-name"
               type="text"
               name="firstName"
-              onChange={handleChange}
-              value={updateProfile.firstName}
+              onChange={props.handleChange}
+              value={props.updateProfile.firstName}
             ></input>
 
-            <label for="last-name">Enter last name: </label>
+            {/* <label for="last-name">Enter last name: </label>
             <input
               id="last-name"
               type="text"
@@ -159,7 +137,7 @@ const Form = ({
               type="submit"
               className="profile-btn"
               value="Update Profile"
-            ></input>
+            ></input> */}
           </div>
         </form>
       </div>
