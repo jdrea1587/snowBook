@@ -4,7 +4,8 @@ import Form from "./Form";
 
 const ProfileDetail = (props) => {
   let _id = props.match.params.id;
-  const [profileDetails, setProfileDetails] = useState({
+  const [profileDetails, setProfileDetails] = useState([]);
+  const [updateProfile, setUpdateProfile] = useState({
     typeOfRide: profileDetails.typeOfRide,
     firstName: profileDetails.firstName,
     image: profileDetails.image,
@@ -19,21 +20,6 @@ const ProfileDetail = (props) => {
     isInstructor: profileDetails.isInstructor,
     isOver21: profileDetails.isOver21,
   });
-  const [updateProfile, setUpdateProfile] = useState({
-    typeOfRide: profileDetails.typeOfRide,
-    firstName: profileDetails.firstName,
-    image: profileDetails.image,
-    lastName: profileDetails.lastName,
-    gender: profileDetails.gender,
-    zipCode: profileDetails.zipCode,
-    interest: profileDetails.interest,
-    level: profileDetails.level,
-    isBackcountry: profileDetails.isBackcountry,
-    personalStory: profileDetails.personalStory,
-    contactInfo: profileDetails.contactInfo,
-    isInstructor: profileDetails.isInstructor,
-    isOver21: profileDetails.isOver21
-  });
   const [updatedInfo, setUpdatedInfo] = useState();
 
   const displayUser = async () => {
@@ -45,8 +31,9 @@ const ProfileDetail = (props) => {
     const response = await axios.delete(
       `http://localhost:3001/api/users/${_id}`
     );
+    props.history.push("/");
+    window.location.reload();
     //getAllUsers...
-    props.history.push('/');
   };
 
   const handleChange = (e) => {
@@ -64,6 +51,7 @@ const ProfileDetail = (props) => {
       `http://localhost:3001/api/users/${_id}`,
       updateProfile
     );
+    window.location.reload();
   };
 
   const handleUpdate = (e) => {

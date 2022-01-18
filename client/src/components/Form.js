@@ -1,26 +1,24 @@
-
-import React from 'react';
+import React from "react";
 
 const Form = ({
   updateUserProfile,
   handleChange,
   handleBooleans,
-  updateProfile
+  updateProfile,
 }) => {
-
   return (
     <div>
       <div for="first-name" className="grid-container-profile">
         Update your profile
-        <form className="form" onSubmit={props.updateUserProfile}>
+        <form className="form" onSubmit={updateUserProfile}>
           <div>
             <label>Enter first name: </label>
             <input
               id="first-name"
               type="text"
               name="firstName"
-              onChange={props.handleChange}
-              value={props.updateProfile.firstName}
+              onChange={handleChange}
+              value={updateProfile.firstName}
             ></input>
 
             {/* <label for="last-name">Enter last name: </label>
@@ -138,12 +136,12 @@ const Form = ({
             >
               <option value="false">No</option>
               <option value="true">Yes</option>
-            </select>
+            </select> */}
             <input
               type="submit"
               className="profile-btn"
               value="Update Profile"
-            ></input> */}
+            ></input>
           </div>
         </form>
       </div>
