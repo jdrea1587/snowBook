@@ -172,12 +172,13 @@ textarea {
   padding: 20px;
   border-radius: 15px;
   color: rgb(9, 8, 21);
-  font-weight: 900;
+  font-weight: bolder;
   font-size: larger;
   cursor: pointer;
   margin: 15px 0;
   max-width: 175px;
   font-family: 'Rubik', sans-serif;
+  /* background-color: white; */
 }
 
 .user-profiles {
