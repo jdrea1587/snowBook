@@ -1,7 +1,6 @@
 import React from "react";
 
 const Store = (props) => {
-  // to go to storeDetail.js
   const showStoreDetails = (id) => {
     props.history.push(`/storeDetail/${id}`);
   };
@@ -9,8 +8,12 @@ const Store = (props) => {
   return (
     <div className="grid-container">
       {props.store.map((str, idx) => (
-        <div className="profile-card" onClick={() => showStoreDetails(str.id)}>
-          <div key={idx}>
+        <div
+          key={idx}
+          className="profile-card"
+          onClick={() => showStoreDetails(str.id)}
+        >
+          <div>
             {str.name}
             {str.services}
             {str.rating}

@@ -1,19 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
-const StoreDetail = () => {
+const StoreDetail = (props) => {
+  const [skiStoreDetails, setSkiStoreDetail] = useState([]);
+
+  const displaySkiStore = async () => {
+    const response = await axios.get(
+      `http://localhost:3001/api/skistores/${props.match.params.id}`
+    );
+    setSkiStoreDetail(response.data.skistore);
+  };
+
+  useEffect(() => {
+    displaySkiStore();
+  }, []);
+
   return (
     <div>
-      <div>Store details</div>
-      <div>Services and items it offers</div>
-
-      {/* <div className="store-cards">
-        <h1>STORE NAME HERE/h1>
-        <h2>ADDRESS HERE</h2>
+      <div className="store-cards">
+        <h1>{skiStoreDetails.name}</h1>
+        <h2>{skiStoreDetails.address}</h2>
         <h2>RENTALS OFFERED HERE</h2>
         <h2>SERVICES OFFERED HERE</h2>
         <h2>GUIDES OFFERED</h2>
-        <h2>RATING HERE</h2>       
-      </div> */}
+        <h2>RATING HERE</h2>
+      </div>
     </div>
   );
 };
