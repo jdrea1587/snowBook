@@ -141,7 +141,7 @@ textarea {
 
 .profile-btn {
   border: 0;
-  background-color: black;
+  background-color: rgb(25, 8, 121);
   padding: 0.5rem;
   color: white;
   margin: 1rem 0;
@@ -185,7 +185,6 @@ textarea {
   display: flex;
   flex-direction: row;
 }
-
 .profile-names img {
   max-width: 150px;
   min-width: 150px;
@@ -194,4 +193,7 @@ textarea {
   object-fit: cover;
   border-radius: 50%;
   border: white 2.5px solid;
+}
+.user-info {
+  margin: auto;
 }

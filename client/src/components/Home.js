@@ -15,8 +15,8 @@ const Home = (props) => {
         >
           <div className="profile-names" key={idx}>
             <img src={ele.image} />
-            {ele.firstName}
-            {ele.lastName}
+            <div>{ele.firstName}</div>
+            <div>{ele.lastName}</div>
           </div>
         </div>
       ))}
