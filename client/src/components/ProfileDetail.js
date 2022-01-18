@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import Form from "./Form";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import Form from './Form';
 
 const ProfileDetail = (props) => {
   let _id = props.match.params.id;
@@ -18,7 +18,7 @@ const ProfileDetail = (props) => {
     personalStory: [],
     contactInfo: [],
     isInstructor: [],
-    isOver21: [],
+    isOver21: []
   });
 
   const displayUser = async () => {
@@ -30,7 +30,7 @@ const ProfileDetail = (props) => {
     const response = await axios.delete(
       `http://localhost:3001/api/users/${_id}`
     );
-    props.history.push("/");
+    props.history.push('/');
   };
 
   const handleChange = (e) => {
@@ -38,7 +38,7 @@ const ProfileDetail = (props) => {
   };
 
   const handleBooleans = (e) => {
-    let bool_value = e.target.value === "true" ? true : false;
+    let bool_value = e.target.value === 'true' ? true : false;
     setUpdateProfile({ ...updateProfile, [e.target.name]: bool_value });
   };
 
@@ -61,12 +61,12 @@ const ProfileDetail = (props) => {
   }, []);
 
   return (
-    <div>
+    <div className="user-form">
+      <img className="profile-image" src={profileDetails.image}></img>
       <div className="user-profiles">
         <h1>
           {profileDetails.firstName} {profileDetails.lastName}
         </h1>
-        <img src={profileDetails.image}></img>
         <h2>Gender: {profileDetails.gender}</h2>
         <h2>Zip code: {profileDetails.zipCode}</h2>
         <h2>Interest: {profileDetails.interest}</h2>
