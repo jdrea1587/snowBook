@@ -1,24 +1,28 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import Form from "./Form";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import Form from './Form';
 
 const ProfileDetail = (props) => {
+  console.log(props);
   let _id = props.match.params.id;
   const [profileDetails, setProfileDetails] = useState([]);
   const [updateProfile, setUpdateProfile] = useState({
-    typeOfRide: [],
-    firstName: [],
-    image: [],
-    lastName: [],
-    gender: [],
-    zipCode: [],
-    interest: [],
-    level: [],
-    isBackcountry: [],
-    personalStory: [],
-    contactInfo: [],
-    isInstructor: [],
-    isOver21: [],
+
+    typeOfRide: "",
+    firstName: "",
+    image: "",
+    lastName: "",
+    gender: "",
+    zipCode: "",
+    interest: "",
+    level: "",
+    isBackcountry: "",
+    personalStory: "",
+    contactInfo: "",
+    isInstructor: "",
+    isOver21: "",
+
+
   });
 
   const displayUser = async () => {
@@ -30,7 +34,10 @@ const ProfileDetail = (props) => {
     const response = await axios.delete(
       `http://localhost:3001/api/users/${_id}`
     );
+
+    //getAllUsers...
     props.history.push("/");
+
   };
 
   const handleChange = (e) => {
@@ -38,20 +45,21 @@ const ProfileDetail = (props) => {
   };
 
   const handleBooleans = (e) => {
-    let bool_value = e.target.value === "true" ? true : false;
+    let bool_value = e.target.value === 'true' ? true : false;
     setUpdateProfile({ ...updateProfile, [e.target.name]: bool_value });
   };
 
   const updateUserProfile = async (e) => {
     e.preventDefault();
+    console.log(updateProfile);
     const response = await axios.put(
       `http://localhost:3001/api/users/${_id}`,
       updateProfile
     );
-    console.log(updateProfile);
   };
 
-  const handleUpdate = () => {
+  const handleUpdate = (e) => {
+    e.preventDefault();
     updateUserProfile();
     props.history.push(`/profiledetail/${_id}`);
   };
@@ -61,12 +69,12 @@ const ProfileDetail = (props) => {
   }, []);
 
   return (
-    <div>
+    <div className="user-form">
+      <img className="profile-image" src={profileDetails.image}></img>
       <div className="user-profiles">
         <h1>
           {profileDetails.firstName} {profileDetails.lastName}
         </h1>
-        <img src={profileDetails.image}></img>
         <h2>Gender: {profileDetails.gender}</h2>
         <h2>Zip code: {profileDetails.zipCode}</h2>
         <h2>Interest: {profileDetails.interest}</h2>
