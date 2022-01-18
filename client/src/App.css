@@ -162,7 +162,7 @@ textarea {
 
 .profile-card {
   border: 2px solid black;
-  padding: 25px;
+  padding: 20px;
   border-radius: 15px;
   color: rgb(9, 8, 21);
   font-weight: 900;
@@ -178,10 +178,11 @@ textarea {
   flex-direction: row;
 }
 
-img {
+.profile-names img {
   max-width: 150px;
   min-width: 150px;
-  max-height: 175px;
-  min-height: 175px;
+  max-height: 150px;
+  min-height: 150px;
   object-fit: cover;
+  border-radius: 50%;
 }
