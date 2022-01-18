@@ -160,6 +160,17 @@ textarea {
   grid-template-columns: 1fr;
 }
 
+.profile-card {
+  border: 2px solid black;
+  padding: 25px;
+  border-radius: 15px;
+  color: rgb(9, 8, 21);
+  font-weight: 900;
+  font-size: larger;
+  cursor: pointer;
+  margin: 15px 0;
+}
+
 .user-profiles {
   display: flex;
   flex-direction: row;
