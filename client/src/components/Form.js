@@ -21,7 +21,7 @@ const Form = ({
               value={updateProfile.firstName}
             ></input>
 
-            {/* <label for="last-name">Enter last name: </label>
+            <label for="last-name">Enter last name: </label>
             <input
               id="last-name"
               type="text"
@@ -136,7 +136,7 @@ const Form = ({
             >
               <option value="false">No</option>
               <option value="true">Yes</option>
-            </select> */}
+            </select>
             <input
               type="submit"
               className="profile-btn"

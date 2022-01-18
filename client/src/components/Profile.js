@@ -24,9 +24,12 @@ const Profile = (props) => {
       "http://localhost:3001/api/users/createprofile",
       newProfile
     );
+
     const resp = await axios.get(`http://localhost:3001/api/users`);
+
     let lastEle = resp.data.users.slice(-1)[0].id;
     props.history.push(`/profiledetail/${lastEle}`);
+    window.location.reload();
   };
   //to get values from fields
   const handleChange = (e) => {
