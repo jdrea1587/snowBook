@@ -20,19 +20,19 @@ const ProfileDetail = (props) => {
     isOver21: profileDetails.isOver21,
   });
   const [updateProfile, setUpdateProfile] = useState({
-    typeOfRide: "",
-    firstName: "",
-    image: "",
-    lastName: "",
-    gender: "",
-    zipCode: "",
-    interest: "",
-    level: "",
-    isBackcountry: "",
-    personalStory: "",
-    contactInfo: "",
-    isInstructor: "",
-    isOver21: "",
+    typeOfRide: profileDetails.typeOfRide,
+    firstName: profileDetails.firstName,
+    image: profileDetails.image,
+    lastName: profileDetails.lastName,
+    gender: profileDetails.gender,
+    zipCode: profileDetails.zipCode,
+    interest: profileDetails.interest,
+    level: profileDetails.level,
+    isBackcountry: profileDetails.isBackcountry,
+    personalStory: profileDetails.personalStory,
+    contactInfo: profileDetails.contactInfo,
+    isInstructor: profileDetails.isInstructor,
+    isOver21: profileDetails.isOver21
   });
   const [updatedInfo, setUpdatedInfo] = useState();
 
@@ -46,7 +46,7 @@ const ProfileDetail = (props) => {
       `http://localhost:3001/api/users/${_id}`
     );
     //getAllUsers...
-    props.history.push("/");
+    props.history.push('/');
   };
 
   const handleChange = (e) => {

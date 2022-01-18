@@ -1,7 +1,13 @@
-import React, { useEffect } from "react";
-import axios from "axios";
 
-const Form = (props) => {
+import React from 'react';
+
+const Form = ({
+  updateUserProfile,
+  handleChange,
+  handleBooleans,
+  updateProfile
+}) => {
+
   return (
     <div>
       <div for="first-name" className="grid-container-profile">
