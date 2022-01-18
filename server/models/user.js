@@ -11,13 +11,13 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       User.hasMany(models.City, {
-        foreignKey: 'user_Id',
+        foreignKey: 'userId',
         as: 'cities',
         onDelete: 'cascade',
         onUpdate: 'cascade'
       }),
         User.hasMany(models.skiStore, {
-          foreignKey: 'user_Id',
+          foreignKey: 'userId',
           as: 'skistores',
           onDelete: 'cascade',
           onUpdate: 'cascade'
@@ -38,7 +38,8 @@ module.exports = (sequelize, DataTypes) => {
       isInstructor: DataTypes.BOOLEAN,
       isOver21: DataTypes.BOOLEAN,
       lastName: DataTypes.STRING,
-      zipCode: DataTypes.INTEGER
+      zipCode: DataTypes.INTEGER,
+      image: DataTypes.STRING
     },
     {
       sequelize,

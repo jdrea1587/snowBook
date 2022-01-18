@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import { Route } from 'react-router-dom';
 import City from './components/City';
 import Profile from './components/Profile';
+import ProfileDetail from './components/ProfileDetail';
 import Store from './components/Store';
 import Mountain from './components/Mountain';
 import StoreDetail from './components/StoreDetail';
@@ -19,13 +20,18 @@ function App() {
   const [home, setHome] = useState([]);
 
   const getHome = async () => {
-    const response = await axios.get('http://localhost:3001/api');
-    console.log(response.data.users);
+    const response = await axios.get('http://localhost:3001/api/users');
     setHome(response.data.users);
+  };
+
+  const getStore = async () => {
+    const response = await axios.get('http://localhost:3001/api/skistores');
+    setStore(response.data.skistores);
   };
 
   useEffect(() => {
     getHome();
+    getStore();
   }, []);
 
   return (
@@ -42,10 +48,26 @@ function App() {
         <Route
           exact
           path="/profile"
-          component={(props) => <Profile {...props} profile={profile} />}
+          component={(props) => (
+            <Profile
+              {...props}
+              profile={profile}
+              home={home}
+              getHome={getHome}
+            />
+          )}
+        />
+        <Route
+          exact
+          path="/profiledetail/:id"
+          component={(props) => <ProfileDetail {...props} />}
         />
         <Route exact path="/city" component={City} />
-        <Route exact path="/store" component={Store} />
+        <Route
+          exact
+          path="/store"
+          component={(props) => <Store {...props} store={store} />}
+        />
 
         <Route
           exact
