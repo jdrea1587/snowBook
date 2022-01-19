@@ -25,7 +25,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 30px;
-  /* position: fixed; */
+  position: fixed;
   width: 100%;
 }
 
@@ -129,8 +129,12 @@ a {
 form {
   max-width: 500px;
   max-height: 100%;
+<<<<<<< HEAD
+  margin-top: 5%;
+=======
 >>>>>>> 663320f608125dab77876dabf4612a1c42607901
   margin: 2rem auto;
+>>>>>>> 74fcdb8703b099e6338705fa91190f7bf017c577
   padding: 2rem;
   justify-content: center;
   padding-top: 100px;
@@ -225,11 +229,13 @@ textarea {
   border: white 2.5px solid;
 }
 .user-info {
-  margin: auto;
+  margin-top: 5%;
+  width: 100%;
+  max-width: 475px;
+  height: auto;
 }
 
 .blank-image {
-  /* margin-left: 100px; */
   max-width: 150px;
   min-width: 150px;
   max-height: 150px;
@@ -239,4 +245,12 @@ textarea {
 
 input {
   margin-top: 10px;
+}
+
+.user-profiles img {
+  width: 100%;
+  max-width: 475px;
+  height: auto;
+  object-fit: cover;
+  margin-top: 2%;
 }
