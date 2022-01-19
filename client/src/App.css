@@ -1,3 +1,7 @@
+/* * {
+  font-family: sans-serif;
+} */
+
 .App {
   display: flex;
   flex-direction: column;
@@ -9,7 +13,8 @@
 }
 
 body {
-  background-image: url("https://getaway-vacations.com/wp-content/uploads/2016/11/vermont-snowboarding-min-1.jpg");
+  background: url('https://getaway-vacations.com/wp-content/uploads/2016/11/vermont-snowboarding-min-1.jpg')
+    fixed;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -19,14 +24,37 @@ body {
   height: 20px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 30px;
+  /* position: fixed; */
+  width: 100%;
+}
+
+.logo {
+  max-height: 35px;
+  max-width: 35px;
+  min-height: 35px;
+  min-width: 35px;
+}
+
+.navDiv {
+  margin-right: 5%;
+}
+.navbar a:hover {
+  background: rgb(233, 230, 230);
+  color: #00296b;
+}
+a {
+  text-decoration: none;
+  padding: 23px;
+  color: white;
+  font-weight: 900;
 }
 
 .divItem {
   padding: 10px;
   text-decoration: none;
   color: white;
+  margin-right: 45px;
 }
 
 .footer {
@@ -34,11 +62,28 @@ body {
   position: fixed;
   height: 10px;
   bottom: 0;
+  left: 0;
   right: 0;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  text-align: center;
+  text-decoration: none;
   padding: 30px;
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.fa {
+  padding: 15px;
+  font-size: 15px;
+  width: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.fa fa-github {
+  text-align: center;
 }
 
 .grid-container {
@@ -48,14 +93,141 @@ body {
   align-items: center;
   max-width: 100%;
   margin: 10px;
+  padding-top: 100px;
 }
 
-.grid-container-profile {
+.test {
+  margin: 0;
+}
+
+/* .grid-container-profile {
   display: grid;
-  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px 2px;
   grid-template-columns: 1fr;
+  background-color: hsl(0, 0%, 99%);
   align-items: center;
   width: 25%;
   padding: 20px 20px 20px 20px;
   margin: 20px 20px 20px 20px;
+  justify-content: center;
+  padding-top: 100px;
+  height: 60px;
+} */
+
+.profile-btn {
+  text-decoration: none;
+  padding: 10px;
+  margin: 10px;
+  border: none;
+}
+
+form {
+  max-width: 500px;
+  max-height: 100%;
+  margin: 2rem auto;
+  padding: 2rem;
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  height: 50%;
+  background-color: white;
+  display: inline-block !important;
+  border-radius: 25px;
+}
+
+label {
+  display: block;
+  padding: 0.5rem 0;
+  margin: 0.5px;
+}
+input,
+textarea {
+  display: block;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 0.5px;
+}
+
+.profile-btn {
+  border: 0;
+  background-color: rgb(25, 8, 121);
+  padding: 0.5rem;
+  color: white;
+  margin: 1rem 0;
+  width: auto;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.create-profile-btn {
+  text-decoration: none;
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  color: white;
+  background-color: #175cca;
+  font-weight: 900;
+}
+
+.profile-btn:hover {
+  background: green;
+}
+
+/* .user-form {
+  display: flex;
+  padding-top: 100px;
+} */
+
+.profile-image {
+  display: grid;
+  max-width: 50%;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px 2px;
+  grid-template-columns: 1fr;
+}
+
+.profile-card {
+  /* border: 2px solid white; */
+  padding: 20px;
+  border-radius: 15px;
+  color: rgb(9, 8, 21);
+  font-weight: bolder;
+  font-size: larger;
+  cursor: pointer;
+  margin: 15px 0;
+  max-width: 175px;
+  font-family: 'Rubik', sans-serif;
+  /* background-color: white; */
+}
+
+.user-profiles {
+  display: flex;
+  flex-direction: row;
+}
+.profile-names img {
+  max-width: 150px;
+  min-width: 150px;
+  max-height: 150px;
+  min-height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: white 2.5px solid;
+}
+.user-info {
+  margin: auto;
+}
+
+.blank-image {
+  /* margin-left: 100px; */
+  max-width: 150px;
+  min-width: 150px;
+  max-height: 150px;
+  min-height: 150px;
+  border-radius: 50%;
+}
+
+input {
+  margin-top: 10px;
 }

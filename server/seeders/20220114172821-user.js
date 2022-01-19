@@ -1,69 +1,77 @@
-'use strict';
+"use strict";
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('users', [
+    return queryInterface.bulkInsert("users", [
       {
-        interest: 'Skiing',
-        level: 'intermediate',
-        firstName: 'Rob',
-        typeOfRide: 'Ski',
+        interest: "Skiing",
+        level: "intermediate",
+        firstName: "Rob",
+        typeOfRide: "Ski",
         isBackcountry: true,
-        gender: 'Male',
-        personalStory: 'I love to Ski. Love the Mountains. Skiing is Life',
-        contactInfo: 'robwilliams0221@gmail.com',
+        gender: "Male",
+        personalStory: "I love to Ski. Love the Mountains. Skiing is Life",
+        contactInfo: "robwilliams0221@gmail.com",
         isInstructor: false,
         isOver21: true,
         lastName: 'Williams',
-        zipCide: 80304
+        zipCode: 80304,
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
-        interest: 'Snowboarding',
-        level: 'advanced',
-        firstName: 'Josh',
-        typeOfRide: 'Snowboard',
+        interest: "Snowboarding",
+        level: "advanced",
+        firstName: "Josh",
+        typeOfRide: "Snowboard",
         isBackcountry: true,
-        gender: 'He/They',
-        personalStory: 'Ride the white wave. Rip and dip!',
-        contactInfo: 'joshdanielrea@gmail.com',
+        gender: "He/They",
+        personalStory: "Ride the white wave. Rip and dip!",
+        contactInfo: "joshdanielrea@gmail.com",
         isInstructor: true,
         isOver21: true,
         lastName: 'Rea',
-        zipCide: 60618
+        zipCode: 60618,
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
-        interest: 'Snowboarding',
-        level: 'beginner',
-        firstName: 'Michael',
-        typeOfRide: 'Snowboard',
+        interest: "Snowboarding",
+        level: "beginner",
+        firstName: "Michael",
+        typeOfRide: "Snowboard",
         isBackcountry: false,
-        gender: 'Male',
+        gender: "Male",
         personalStory: "I'm new to this and want to learn!",
-        contactInfo: 'therealmichaelnewman@gmail.com',
+        contactInfo: "therealmichaelnewman@gmail.com",
         isInstructor: false,
         isOver21: true,
         lastName: 'Newman',
-        zipCide: 11101
+        zipCode: 11101,
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
-        interest: 'Snowboarding',
-        level: 'intermediate',
-        firstName: 'Soul',
-        typeOfRide: 'Snowboard',
+        interest: "Snowboarding",
+        level: "intermediate",
+        firstName: "Soul",
+        typeOfRide: "Snowboard",
         isBackcountry: false,
-        gender: 'Male',
+        gender: "Male",
         personalStory:
           "I love to snowboard but I don't have any friends to go with, please reach out!",
-        contactInfo: 'lee.soul12@gmail.com',
+        contactInfo: "lee.soul12@gmail.com",
         isInstructor: false,
         isOver21: true,
         lastName: 'Lee',
-        zipCide: 31909
+        zipCode: 31909,
+        createdAt: new Date(),
+        updatedAt: new Date()
       }
     ]);
   },
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('users', null, {});
-  }
+    return queryInterface.bulkDelete("users", null, {});
+  },
 };

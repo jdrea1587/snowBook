@@ -1,18 +1,25 @@
-import React from 'react';
+import React from "react";
 
-const Store = () => {
+const Store = (props) => {
+  const showStoreDetails = (id) => {
+    props.history.push(`/storeDetail/${id}`);
+  };
+
   return (
     <div className="grid-container">
-      <ul>Store name 1</ul>
-      <ul>Store name 2</ul>
-      <ul>Store name 3</ul>
-      <ul>Store name 4</ul>
-      <ul>Store name 5</ul>
-      <ul>Store name 6</ul>
-      <ul>Store name 7</ul>
-      <ul>Store name 8</ul>
-      <ul>Store name 9</ul>
-      <ul>Store name 10</ul>
+      {props.store.map((str, idx) => (
+        <div
+          key={idx}
+          className="profile-card"
+          onClick={() => showStoreDetails(str.id)}
+        >
+          <div>
+            {str.name}
+            {str.services}
+            {str.rating}
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
