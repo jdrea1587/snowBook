@@ -10,6 +10,7 @@ const Mountain = (props) => {
       `http://localhost:3001/api/cities/${props.match.params.id}`
     );
     setCityDetails(response.data.city);
+    console.log(response.data.city);
     setResorts(response.data.city.resorts);
   };
 
