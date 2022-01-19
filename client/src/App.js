@@ -13,7 +13,7 @@ import StoreDetail from "./components/StoreDetail";
 import axios from "axios";
 
 function App() {
-  const [mountains, setMountains] = useState([]);
+  const [cities, setCities] = useState([]);
   const [storeDetails, setStoreDetails] = useState([]);
   const [profile, setProfile] = useState([]);
   const [store, setStore] = useState([]);
@@ -29,9 +29,15 @@ function App() {
     setStore(response.data.skistores);
   };
 
+  const getCities = async () => {
+    const response = await axios.get("http://localhost:3001/api/cities");
+    setCities(response.data.cities);
+  };
+
   useEffect(() => {
     getHome();
     getStore();
+    getCities();
   }, []);
 
   return (
@@ -62,7 +68,11 @@ function App() {
           path="/profiledetail/:id"
           component={(props) => <ProfileDetail {...props} />}
         />
-        <Route exact path="/city" component={City} />
+        <Route
+          exact
+          path="/city"
+          component={(props) => <City {...props} cities={cities} />}
+        />
         <Route
           exact
           path="/store"
@@ -72,7 +82,7 @@ function App() {
         <Route
           exact
           path="/mountain/:id"
-          component={(props) => <Mountain {...props} mountains={mountains} />}
+          component={(props) => <Mountain {...props} />}
         />
         <Route
           exact

@@ -13,7 +13,12 @@ const Home = (props) => {
           className="profile-card"
           onClick={() => showProfiles(ele.id)}
         >
+<<<<<<< HEAD
           <div key={idx}>
+=======
+          <div className="profile-names" key={idx}>
+            <img src={ele.image} />
+>>>>>>> 663320f608125dab77876dabf4612a1c42607901
             <div>{ele.firstName}</div>
             <div>{ele.lastName}</div>
           </div>
