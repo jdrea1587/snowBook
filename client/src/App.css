@@ -122,10 +122,19 @@ a {
   border: none;
 }
 
+<<<<<<< HEAD
+.form {
+  max-width: 100%;
+=======
 form {
   max-width: 500px;
   max-height: 100%;
+<<<<<<< HEAD
   margin-top: 5%;
+=======
+>>>>>>> 663320f608125dab77876dabf4612a1c42607901
+  margin: 2rem auto;
+>>>>>>> 74fcdb8703b099e6338705fa91190f7bf017c577
   padding: 2rem;
   justify-content: center;
   padding-top: 100px;
@@ -138,8 +147,12 @@ form {
 
 label {
   display: block;
+<<<<<<< HEAD
+  /* padding: 0.5rem 0; */
+=======
   padding: 0.5rem 0;
   margin: 0.5px;
+>>>>>>> 663320f608125dab77876dabf4612a1c42607901
 }
 input,
 textarea {
