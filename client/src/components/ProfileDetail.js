@@ -28,14 +28,12 @@ const ProfileDetail = (props) => {
   });
 
   const displayUser = async () => {
-    const response = await axios.get(`http://localhost:3001/api/users/${_id}`);
+    const response = await axios.get(`/api/users/${_id}`);
     setProfileDetails(response.data.userProfile);
   };
 
   const deleteProfile = async () => {
-    const response = await axios.delete(
-      `http://localhost:3001/api/users/${_id}`
-    );
+    const response = await axios.delete(`/api/users/${_id}`);
     props.history.push("/");
     window.location.reload();
     //getAllUsers...
@@ -52,10 +50,7 @@ const ProfileDetail = (props) => {
 
   const updateUserProfile = async (e) => {
     e.preventDefault();
-    const response = await axios.put(
-      `http://localhost:3001/api/users/${_id}`,
-      updateProfile
-    );
+    const response = await axios.put(`/api/users/${_id}`, updateProfile);
     window.location.reload();
   };
 
