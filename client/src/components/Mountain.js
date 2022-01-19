@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const Mountain = (props) => {
   const [cityDetails, setCityDetails] = useState([]);
@@ -20,7 +20,7 @@ const Mountain = (props) => {
     <div>
       <div className="mountain-cards">
         <h1>{cityDetails.name}</h1>
-        <h2>RESORTS</h2>
+        <h2> COOL RESORTS</h2>
         {resorts.map((rest, idx) => (
           <h3 key={idx}>{rest}</h3>
         ))}
