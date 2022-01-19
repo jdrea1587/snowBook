@@ -36,9 +36,13 @@ const ProfileDetail = (props) => {
     const response = await axios.delete(
       `http://localhost:3001/api/users/${_id}`
     );
+<<<<<<< HEAD
+    props.history.push('/');
+=======
     props.history.push("/");
     window.location.reload();
     //getAllUsers...
+>>>>>>> 663320f608125dab77876dabf4612a1c42607901
   };
 
   const handleChange = (e) => {
