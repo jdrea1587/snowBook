@@ -5,9 +5,7 @@ const StoreDetail = (props) => {
   const [skiStoreDetails, setSkiStoreDetail] = useState([]);
 
   const displaySkiStore = async () => {
-    const response = await axios.get(
-      `http://localhost:3001/api/skistores/${props.match.params.id}`
-    );
+    const response = await axios.get(`/api/skistores/${props.match.params.id}`);
     setSkiStoreDetail(response.data.skistore);
     console.log(response.data.skistore);
   };
