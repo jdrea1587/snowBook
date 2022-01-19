@@ -5,10 +5,9 @@ const StoreDetail = (props) => {
   const [skiStoreDetails, setSkiStoreDetail] = useState([]);
 
   const displaySkiStore = async () => {
-    const response = await axios.get(
-      `http://localhost:3001/api/skistores/${props.match.params.id}`
-    );
+    const response = await axios.get(`/api/skistores/${props.match.params.id}`);
     setSkiStoreDetail(response.data.skistore);
+    console.log(response.data.skistore);
   };
 
   useEffect(() => {
@@ -20,9 +19,16 @@ const StoreDetail = (props) => {
       <div className="store-cards">
         <h1>{skiStoreDetails.name}</h1>
         <h2>{skiStoreDetails.address}</h2>
-        <h2>RENTALS OFFERED HERE</h2>
+        <h3>
+          Rentals offered:
+          {skiStoreDetails.rentalsOffered ? " Yes" : " No"}
+        </h3>
+
         <h2>SERVICES OFFERED HERE</h2>
-        <h2>GUIDES OFFERED</h2>
+        <h3>
+          Guides offered:
+          {skiStoreDetails.guidesOffered ? " Yes" : " No"}
+        </h3>
         <h2>RATING HERE</h2>
       </div>
     </div>

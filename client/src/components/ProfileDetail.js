@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import Form from './Form';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import Form from "./Form";
 
 const ProfileDetail = (props) => {
+  console.log(props);
   const [update, setUpdate] = useState(false);
   const toggleUpdate = () => {
     setUpdate(!update);
@@ -23,19 +24,17 @@ const ProfileDetail = (props) => {
     personalStory: profileDetails.personalStory,
     contactInfo: profileDetails.contactInfo,
     isInstructor: profileDetails.isInstructor,
-    isOver21: profileDetails.isOver21
+    isOver21: profileDetails.isOver21,
   });
 
   const displayUser = async () => {
-    const response = await axios.get(`http://localhost:3001/api/users/${_id}`);
+    const response = await axios.get(`/api/users/${_id}`);
     setProfileDetails(response.data.userProfile);
   };
 
   const deleteProfile = async () => {
-    const response = await axios.delete(
-      `http://localhost:3001/api/users/${_id}`
-    );
-    props.history.push('/');
+    const response = await axios.delete(`/api/users/${_id}`);
+    props.history.push("/");
     window.location.reload();
     //getAllUsers...
   };
@@ -45,16 +44,13 @@ const ProfileDetail = (props) => {
   };
 
   const handleBooleans = (e) => {
-    let bool_value = e.target.value === 'true' ? true : false;
+    let bool_value = e.target.value === "true" ? true : false;
     setUpdateProfile({ ...updateProfile, [e.target.name]: bool_value });
   };
 
   const updateUserProfile = async (e) => {
     e.preventDefault();
-    const response = await axios.put(
-      `http://localhost:3001/api/users/${_id}`,
-      updateProfile
-    );
+    const response = await axios.put(`/api/users/${_id}`, updateProfile);
     window.location.reload();
   };
 
@@ -82,12 +78,15 @@ const ProfileDetail = (props) => {
             <h2>Interest: {profileDetails.interest}</h2>
             <h2>Level: {profileDetails.level}</h2>
             <h2>Type of ride: {profileDetails.typeOfRide}</h2>
-            <h2>Backcountry: YES OR NO HERE</h2>
+            <h2>
+              Backcountry:
+              {profileDetails.isBackcountry ? " Yes" : " No"}
+            </h2>
             <h2>Personal Story: </h2>
             <p> {profileDetails.personalStory}</p>
-            <h3>Contact: {profileDetails.personalStory}</h3>
-            <h3>Instructor: YES OR NO HERE</h3>
-            <h3>Over 21: YES OR NO HERE</h3>
+            <h3>Contact: {profileDetails.contactInfo}</h3>
+            <h3>Instructor: {profileDetails.isInstructor ? " Yes" : " No"}</h3>
+            <h3>Over 21: {profileDetails.isOver21 ? " Yes" : " No"}</h3>
           </div>
         ) : (
           <div className="user-info">

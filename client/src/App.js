@@ -20,17 +20,17 @@ function App() {
   const [home, setHome] = useState([]);
 
   const getHome = async () => {
-    const response = await axios.get("http://localhost:3001/api/users");
+    const response = await axios.get("/api/users");
     setHome(response.data.users);
   };
 
   const getStore = async () => {
-    const response = await axios.get("http://localhost:3001/api/skistores");
+    const response = await axios.get("/api/skistores");
     setStore(response.data.skistores);
   };
 
   const getCities = async () => {
-    const response = await axios.get("http://localhost:3001/api/cities");
+    const response = await axios.get("/api/cities");
     setCities(response.data.cities);
   };
 

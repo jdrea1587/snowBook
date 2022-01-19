@@ -6,10 +6,9 @@ const Mountain = (props) => {
   const [resorts, setResorts] = useState([]);
 
   const displayMountain = async () => {
-    const response = await axios.get(
-      `http://localhost:3001/api/cities/${props.match.params.id}`
-    );
+    const response = await axios.get(`/api/cities/${props.match.params.id}`);
     setCityDetails(response.data.city);
+    console.log(response.data.city);
     setResorts(response.data.city.resorts);
   };
 
