@@ -31,8 +31,6 @@ const ProfileDetail = (props) => {
     const response = await axios.delete(
       `http://localhost:3001/api/users/${_id}`
     );
-
-    //getAllUsers...
     props.history.push('/');
   };
 

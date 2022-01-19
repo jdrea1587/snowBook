@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Home = (props) => {
   const showProfiles = (id) => {
@@ -14,8 +14,8 @@ const Home = (props) => {
           onClick={() => showProfiles(ele.id)}
         >
           <div key={idx}>
-            {ele.firstName}
-            {ele.lastName}
+            <div>{ele.firstName}</div>
+            <div>{ele.lastName}</div>
           </div>
         </div>
       ))}
