@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 const Nav = () => {
   return (
     <nav className="navbar">
-      {/* <h1 className="title">SnowBook</h1> */}
       <img
         className="logo"
         src="https://i.postimg.cc/15ZKqvzv/favicon-32x32.png"
@@ -21,6 +20,9 @@ const Nav = () => {
         </Link>
         <Link to="/city" className="divItem">
           City
+        </Link>
+        <Link to="/weather" className="divItem">
+          Weather
         </Link>
       </div>
     </nav>
