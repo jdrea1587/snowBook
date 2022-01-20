@@ -135,6 +135,20 @@ form,
   /* position: fixed; */
 }
 
+.weather-temp {
+  background-color: rgba(220, 230, 247, 0.4);
+  border-radius: 25px;
+  padding: 50px;
+}
+
+.weather-details {
+  background-color: rgba(220, 230, 247, 0.4);
+  border-radius: 25px;
+  padding: 50px;
+  margin-left: 350px;
+  margin-right: 350px;
+}
+
 label {
   display: block;
 }
@@ -187,7 +201,6 @@ textarea {
 }
 
 .profile-card {
-  /* border: 2px solid white; */
   padding: 20px;
   border-radius: 15px;
   color: rgb(9, 8, 21);
@@ -196,8 +209,7 @@ textarea {
   cursor: pointer;
   margin: 15px 0;
   max-width: 175px;
-  font-family: 'Rubik', sans-serif;
-  /* background-color: white; */
+  font-family: "Rubik", sans-serif;
 }
 
 .user-profiles {
