@@ -132,7 +132,6 @@ form,
 
   display: inline-block !important;
   border-radius: 25px;
-  /* position: fixed; */
 }
 
 .weather-temp {
@@ -186,11 +185,6 @@ textarea {
 .profile-btn:hover {
   background: green;
 }
-
-/* .user-form {
-  display: flex;
-  padding-top: 100px;
-} */
 
 .profile-image {
   display: grid;
