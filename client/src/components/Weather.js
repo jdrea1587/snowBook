@@ -25,7 +25,7 @@ const Weather = () => {
     <div>
       {update === false ? (
         <form onSubmit={handleSubmit} className="form">
-          <label>Enter Zip Code:</label>
+          <label>Enter Zip Code or City Name:</label>
           <input
             id="zip"
             type="text"
