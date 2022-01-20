@@ -132,7 +132,6 @@ form,
 
   display: inline-block !important;
   border-radius: 25px;
-  /* position: fixed; */
 }
 
 .weather-temp {
@@ -187,11 +186,6 @@ textarea {
   background: green;
 }
 
-/* .user-form {
-  display: flex;
-  padding-top: 100px;
-} */
-
 .profile-image {
   display: grid;
   max-width: 50%;
@@ -209,7 +203,7 @@ textarea {
   cursor: pointer;
   margin: 15px 0;
   max-width: 175px;
-  font-family: "Rubik", sans-serif;
+  font-family: 'Rubik', sans-serif;
 }
 
 .user-profiles {
