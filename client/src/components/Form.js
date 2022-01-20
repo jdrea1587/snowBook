@@ -9,7 +9,6 @@ const Form = ({
   return (
     <div>
       <div className="grid-container-profile">
-        Update your profile
         <form className="form" onSubmit={updateUserProfile}>
           <div>
             <label htmlFor="firstName">Enter first name: </label>
