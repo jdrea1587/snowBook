@@ -113,7 +113,7 @@ const Profile = (props) => {
           value={newProfile.typeOfRide}
           placeholder={'Enter ride:'}
         ></input>
-        <label for="isBackountry">Backountry?</label>
+       
         <select
           id="country"
           onChange={handleBooleans}
@@ -142,7 +142,6 @@ const Profile = (props) => {
           placeholder={'Contact Info:'}
         ></input>
 
-        <label for="instructor">Instructor?</label>
         <select
           id="instructor"
           name="isInstructor"
@@ -154,7 +153,6 @@ const Profile = (props) => {
           <option value="true">Yes</option>
         </select>
 
-        <label for="over">Over 21?</label>
         <select
           id="over"
           name="isOver21"

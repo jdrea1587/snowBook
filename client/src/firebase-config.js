@@ -1,8 +1,10 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+// import REACT-REACT_APP_API_KEY from 
+
 const firebaseConfig = {
 
-    apiKey: "AIzaSyCC5BVOgxBIrnuzK7GEjjSUzpvzGwW2Zto",
+    apiKey: "${process.env.REACT_APP_API_KEY}",
   
     authDomain: "snowbook-3d14e.firebaseapp.com",
   
