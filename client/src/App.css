@@ -9,7 +9,7 @@
 }
 
 body {
-  background: url("https://getaway-vacations.com/wp-content/uploads/2016/11/vermont-snowboarding-min-1.jpg")
+  background: url('https://getaway-vacations.com/wp-content/uploads/2016/11/vermont-snowboarding-min-1.jpg')
     fixed;
   background-size: cover;
   background-repeat: no-repeat;
@@ -102,11 +102,11 @@ a {
   border: none;
 }
 
-form {
+form,
+.auth-form {
   max-width: 500px;
   max-height: 100%;
   margin-top: 5%;
-  margin: 2rem auto;
   padding: 2rem;
   justify-content: center;
   padding-top: 100px;
@@ -132,6 +132,7 @@ form {
 
   display: inline-block !important;
   border-radius: 25px;
+  /* position: fixed; */
 }
 
 .weather-temp {
@@ -171,7 +172,8 @@ textarea {
   cursor: pointer;
 }
 
-.create-profile-btn {
+.create-profile-btn,
+.register-btn {
   text-decoration: none;
   padding: 10px;
   margin: 10px;
@@ -228,6 +230,7 @@ textarea {
   width: 100%;
   max-width: 475px;
   height: auto;
+  background-color: white;
 }
 
 .blank-image {
