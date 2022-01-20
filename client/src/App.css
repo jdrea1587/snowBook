@@ -1,7 +1,3 @@
-/* * {
-  font-family: sans-serif;
-} */
-
 .App {
   display: flex;
   flex-direction: column;
@@ -119,6 +115,7 @@ form {
   background-color: white;
   display: inline-block !important;
   border-radius: 25px;
+  /* position: fixed; */
 }
 
 label {
@@ -203,6 +200,7 @@ textarea {
   width: 100%;
   max-width: 475px;
   height: auto;
+  background-color: white;
 }
 
 .blank-image {
