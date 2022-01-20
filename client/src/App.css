@@ -22,6 +22,7 @@ body {
   justify-content: space-between;
   padding: 30px;
   width: 100%;
+  position: fixed;
 }
 
 .logo {
