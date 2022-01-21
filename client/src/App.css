@@ -266,3 +266,17 @@ input {
   font-size: 20px;
   font-weight: bolder;
 }
+
+.auth-form {
+  background-color: rgba(220, 230, 247, 0.4);
+  border-radius: 25px;
+  display: inline-block !important;
+  height: 50%;
+  justify-content: center;
+  max-width: 500px;
+  padding: 100px 2rem;
+  color: white;
+  font-weight: 900;
+  font-size: xx-large;
+  text-shadow: 3px 3px grey;
+}
