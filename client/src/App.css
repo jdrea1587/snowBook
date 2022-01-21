@@ -119,6 +119,13 @@ form,
   border-radius: 25px;
 }
 
+.create-form {
+  color: white;
+  font-weight: 900;
+  font-size: xx-large;
+  text-shadow: 3px 3px grey;
+}
+
 .mountain-cards,
 .store-cards {
   max-width: 500px;
