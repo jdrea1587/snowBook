@@ -43,12 +43,10 @@ const Profile = (props) => {
       window.location.reload();
     }
   };
-  //to get values from fields
   const handleChange = (e) => {
     setNewProfile({ ...newProfile, [e.target.name]: e.target.value });
   };
 
-  // to change to boolean
   const handleBooleans = (e) => {
     let bool_value = e.target.value === "true" ? true : false;
     setNewProfile({ ...newProfile, [e.target.name]: bool_value });
