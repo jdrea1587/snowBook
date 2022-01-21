@@ -28,6 +28,7 @@ const Profile = (props) => {
       newProfile.image === "" ||
       newProfile.gender === "" ||
       newProfile.zipCode === "" ||
+      newProfile.zipCode === "" ||
       newProfile.interest === "" ||
       newProfile.level === "" ||
       newProfile.personalStory === "" ||
@@ -96,7 +97,7 @@ const Profile = (props) => {
         ></input>
         <input
           id="zip"
-          type="text"
+          type="number"
           name="zipCode"
           onChange={handleChange}
           value={newProfile.zipCode}
