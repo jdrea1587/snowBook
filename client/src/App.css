@@ -227,6 +227,8 @@ textarea {
   max-width: 475px;
   height: auto;
   background-color: white;
+  border-radius: 5%;
+  opacity: 75%;
 }
 
 .blank-image {

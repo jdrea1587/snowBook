@@ -61,7 +61,9 @@ const Register = (props) => {
   return (
     <div>
       {loggedIn === false ? (
+
         <div className="auth-form">
+         
           <div>
             <h1>Welcome to snowBook</h1>
             <h3>Register</h3>
@@ -81,6 +83,7 @@ const Register = (props) => {
 
             <button onClick={register}>Add Account</button>
           </div>
+
           <div>
             <h3>Login Here</h3>
             <input
@@ -106,7 +109,9 @@ const Register = (props) => {
             Log out
           </button>
         </div>
+
       ) : (
+
         <div className="grid-container">
           {props.home.map((ele, idx) => (
             <div
@@ -122,6 +127,7 @@ const Register = (props) => {
             </div>
           ))}
         </div>
+
       )}
     </div>
   );
