@@ -149,6 +149,17 @@ form,
   background-color: rgba(220, 230, 247, 0.4);
   border-radius: 25px;
   padding: 50px;
+  color: white;
+  font-weight: 900;
+  font-size: xx-large;
+  text-shadow: 3px 3px grey;
+}
+
+.weather-form {
+  color: white;
+  font-weight: 900;
+  font-size: x-large;
+  text-shadow: 3px 3px grey;
 }
 
 .weather-details {
@@ -157,6 +168,10 @@ form,
   padding: 50px;
   margin-left: 350px;
   margin-right: 350px;
+  color: white;
+  font-weight: 900;
+  font-size: xx-large;
+  text-shadow: 3px 3px grey;
 }
 
 label {
@@ -187,6 +202,12 @@ textarea {
   padding: 10px;
   margin: 10px;
   border: none;
+  color: white;
+  background-color: #175cca;
+  font-weight: 900;
+}
+
+.zipcode-submit {
   color: white;
   background-color: #175cca;
   font-weight: 900;
