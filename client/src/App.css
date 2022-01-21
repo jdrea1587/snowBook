@@ -280,3 +280,10 @@ input {
   font-size: xx-large;
   text-shadow: 3px 3px grey;
 }
+
+.auth-btn {
+  color: white;
+  background-color: #175cca;
+  font-weight: 900;
+  border-radius: 15px;
+}
