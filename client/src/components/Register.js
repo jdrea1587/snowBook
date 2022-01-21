@@ -1,22 +1,22 @@
-import React from "react";
-import { useState } from "react";
+import React from 'react';
+import { useState } from 'react';
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
-import { auth } from "../firebase-config";
+  signInWithEmailAndPassword
+} from 'firebase/auth';
+import { auth } from '../firebase-config';
 
 const Register = (props) => {
   const showProfiles = (id) => {
     props.history.push(`/profiledetail/${id}`);
   };
   const [loggedIn, setLoggedIn] = useState(false);
-  const [regEmail, setRegEmail] = useState("");
-  const [regPassword, setRegPassword] = useState("");
-  const [loginEmail, setLogEmail] = useState("");
-  const [loginPassword, setLogPassword] = useState("");
+  const [regEmail, setRegEmail] = useState('');
+  const [regPassword, setRegPassword] = useState('');
+  const [loginEmail, setLogEmail] = useState('');
+  const [loginPassword, setLogPassword] = useState('');
   const [user, setUser] = useState({});
   const toggleLogIn = () => {
     setLoggedIn(!loggedIn);
@@ -71,17 +71,19 @@ const Register = (props) => {
               onChange={(event) => {
                 setRegEmail(event.target.value);
               }}
-              placeholder={"email address"}
+              placeholder={'email address'}
             ></input>
             <input
               onChange={(event) => {
                 setRegPassword(event.target.value);
               }}
               type="password"
-              placeholder={"Password"}
+              placeholder={'Password'}
             ></input>
 
-            <button onClick={register}>Add Account</button>
+            <button className="auth-btn" onClick={register}>
+              Add Account
+            </button>
           </div>
 
           <div>
@@ -100,12 +102,14 @@ const Register = (props) => {
               }}
             />
 
-            <button onClick={login}>Login </button>
+            <button className="auth-btn" onClick={login}>
+              Login{' '}
+            </button>
           </div>
 
           <h3>Logged in</h3>
           <h3>{user?.email}</h3>
-          <button className="register-btn" onClick={logout}>
+          <button className="auth-btn" onClick={logout}>
             Log out
           </button>
         </div>
